@@ -1,0 +1,126 @@
+.aboutme-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0rem auto 0.5rem auto;
+  max-width: 1100px;
+  padding: 1.5rem 1.5rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(60,40,120,0.08);
+}
+
+.aboutme-pic {
+  flex: 1 1 340px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.aboutme-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(60,40,120,0.10);
+  background: #f7f6fa;
+  object-fit: cover;
+}
+
+.aboutme-img-circle {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 32px;
+  border: 8px solid #f7f4fa;
+  box-shadow: 0 4px 18px rgba(60,40,120,0.13);
+  position: static;
+  margin: 0;
+  background: #fff;
+}
+
+.aboutme-img-wrapper {
+  min-width: 340px;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.aboutme-card {
+  align-items: flex-end;
+}
+
+.aboutme-bio {
+  flex: 2 1 340px;
+  padding-left: 2rem;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutme-bio h2 {
+  font-size: 2.2rem;
+  color: #3a2c5b;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.aboutme-bio ul {
+  padding-left: 1.2rem;
+  font-size: 1.13rem;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.aboutme-bio li {
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .aboutme-img-circle {
+    width: 180px;
+    height: 180px;
+    border-width: 5px;
+    border-radius: 18px;
+  }
+  .aboutme-img-wrapper {
+    min-width: unset;
+    min-height: unset;
+    align-items: center;
+  }
+  .aboutme-card {
+    align-items: center;
+  }
+  .aboutme-pic {
+    flex: unset;
+    align-items: center;
+    align-self: unset;
+  }
+  .aboutme-img {
+    height: auto;
+    max-width: 260px;
+  }
+  .aboutme-bio {
+    padding-left: 0;
+    align-self: unset;
+  }
+}
+
+@media (max-width: 800px) {
+  .aboutme-section {
+    flex-direction: column;
+    gap: 1.7rem;
+    padding: 1.5rem 0.7rem;
+  }
+  .aboutme-bio {
+    padding-left: 0;
+    text-align: center;
+  }
+} 

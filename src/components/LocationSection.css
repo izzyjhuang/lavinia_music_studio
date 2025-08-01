@@ -1,0 +1,63 @@
+.location-section {
+  margin: 3.5rem auto 2.5rem auto;
+  max-width: 900px;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(60,40,120,0.08);
+  text-align: center;
+}
+
+.location-section h2 {
+  font-size: 2.2rem;
+  color: #3a2c5b;
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.location-map-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.7rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(60,40,120,0.10);
+}
+
+.location-list {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0 auto 1.2rem auto;
+  font-size: 1.13rem;
+  color: #333;
+  line-height: 1.8;
+  max-width: 400px;
+  text-align: left;
+  display: inline-block;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.location-list li {
+  margin-bottom: 0.7rem;
+}
+
+.location-caption {
+  font-size: 1.05rem;
+  color: #555;
+  margin-top: 1.3rem;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+}
+
+@media (max-width: 800px) {
+  .location-section {
+    padding: 1.5rem 0.7rem;
+  }
+  .location-map-container {
+    max-width: 98vw;
+  }
+  .location-list {
+    font-size: 1.03rem;
+    max-width: 98vw;
+  }
+} 
