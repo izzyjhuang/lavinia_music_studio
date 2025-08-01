@@ -406,30 +406,30 @@ const Piano = () => {
             <>
               <blockquote>
                 “Lavinia always makes lessons fun and helps me understand hard music. I started learning with her when I was 7, and now I can play pieces I never thought possible. She helped me prepare for my first recital and I felt so proud!”
-                <span className="testimonial-student">— Emily (8yo), learning since 2023</span>
+                <span className="testimonial-student">— Emily (11yo), learning since 2021</span>
               </blockquote>
               <blockquote>
                 “I used to be nervous about playing in front of people, but Lavinia encouraged me every week. Since I started lessons with her, I’ve learned to play with more confidence and even won my school’s talent show!”
-                <span className="testimonial-student">— Jason (11yo), learning since 2023</span>
+                <span className="testimonial-student">— Jason (14yo), learning since 2019</span>
               </blockquote>
               <blockquote>
                 “Ms. Lavinia explains things in a way that makes sense and always finds music I love. I began lessons with her last year, and now I can read music and play my favorite movie themes. Piano is my favorite part of the week!”
-                <span className="testimonial-student">— Sophia (10yo), learning since 2023</span>
+                <span className="testimonial-student">— Sophia (10yo), learning since 2024</span>
               </blockquote>
             </>
           ) : (
             <>
               <blockquote>
                 「Lavinia老師的課總是很有趣，讓我懂得怎麼彈難的曲子。我七歲開始跟她學，現在已經能彈我以前覺得不可能的曲子了。她還幫我準備第一次的鋼琴發表會，讓我很有成就感！」
-                <span className="testimonial-student">— Emily（8歲），自2023年開始學習</span>
+                <span className="testimonial-student">— Emily（11歲），自2021年開始學習</span>
               </blockquote>
               <blockquote>
-                「我以前很害怕在大家面前彈琴，但Lavinia老師每週都鼓勵我。自從2023年開始上她的課，我變得更有自信，還贏得了學校的才藝比賽！」
-                <span className="testimonial-student">— Jason（11歲），自2023年開始學習</span>
+                「我以前很害怕在大家面前彈琴，但Lavinia老師每週都鼓勵我。自從開始上她的課，我變得更有自信，還贏得了學校的才藝比賽！」
+                <span className="testimonial-student">— Jason（14歲），自2019年開始學習</span>
               </blockquote>
               <blockquote>
                 「Lavinia老師講解得很清楚，還會幫我找我喜歡的音樂。去年開始跟她學鋼琴，現在我會看譜，也能彈自己最愛的電影主題曲。每週的鋼琴課是我最期待的時光！」
-                <span className="testimonial-student">— Sophia（10歲），自2023年開始學習</span>
+                <span className="testimonial-student">— Sophia（10歲），自2024年開始學習</span>
               </blockquote>
             </>
           )}

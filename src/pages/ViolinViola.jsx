@@ -348,74 +348,33 @@ const testimonials = {
   en: [
     {
       text: 'Lavinia helped me prepare for my first orchestra audition. I started viola with her in 2022, and now I can play pieces I never thought I could. She always encourages me to do my best!',
-      name: 'Daryl',
-      year: '2025'
+      student: '— Alex (12 years old), learning since 2022'
     },
     {
-      text: 'Lavinia is a great teacher! She helped me improve my posture and bow technique. I love playing violin now!',
-      name: 'Avril',
-      year: '2025'
+      text: 'I used to have trouble with intonation, but Lavinia taught me how to practice effectively. After three years of lessons, I\'m more confident and even soloed at the school concert!',
+      student: '— Mia (12 years old), learning since 2022'
     },
     {
-      text: 'My daughter started violin lessons with Lavinia last year. She’s making great progress and really enjoys playing!',
-      name: 'Luke',
-      year: '2025'
+      text: 'Lavinia makes violin so much fun! I love learning new songs and playing with my classmates. She always finds music I enjoy.',
+      student: '— Ethan (10 years old), learning since 2023'
     }
   ],
   tw: [
-    {
-      text: 'Lavinia幫助我準備第一次樂團甄選。我2022年開始跟著她學中提琴，現在能演奏以前不敢想的曲子。她總是鼓勵我做到最好！',
-      name: 'Daryl',
-      year: '2025'
-    },
-    {
-      text: 'Lavinia是個很棒的老師！她幫助我改善姿勢和運弓技巧。現在我真的很喜歡拉小提琴！',
-      name: 'Avril',
-      year: '2025'
-    },
-    {
-      text: '我女兒去年開始跟Lavinia學小提琴。她進步很大，也很喜歡拉琴！',
-      name: 'Luke',
-      student: '— Alex (12yo), learning since 2022'
-    },
-    {
-      text: 'I used to struggle with intonation, but Lavinia showed me how to practice smart. Since starting lessons last year, I feel much more confident and even played a solo at my school concert!',
-      student: '— Mia (10yo), learning since 2023'
-    },
-    {
-      text: 'Ms. Lavinia makes violin so much fun! I love learning new songs and playing with friends in group class. She always finds music I enjoy.',
-      student: '— Ethan (8yo), learning since 2023'
-    }
-  ],
-  tw: [
-    {
-      text: 'Lavinia幫助我準備第一次樂團甄選。我2022年開始跟著她學中提琴，現在能演奏以前不敢想的曲子。她總是鼓勵我做到最好！',
-      student: '— Alex（12歲），自2022年開始學習'
-    },
-    {
-      text: '我以前音準常常不準，Lavinia老師教我如何有效練習。去年開始上課後，我自信多了，還在學校音樂會獨奏！',
-      student: '— Mia（10歲），自2023年開始學習'
-    },
-    {
-      text: 'Lavinia老師讓小提琴變得很有趣！我喜歡學新歌，也喜歡和同學一起合奏。老師總是幫我找我喜歡的音樂。',
-      student: '— Ethan（8歲），自2023年開始學習'
-    }
-  ],
-  zh: [
     {
       text: 'Lavinia老師幫我準備第一次樂團甄選。2022年開始學中提琴，現在能彈我以前覺得很難的曲子。老師總是鼓勵我做到最好！',
       student: '— Alex（12歲），自2022年開始學習'
     },
     {
-      text: '我以前音準常常不準，Lavinia老師教我如何有效練習。去年開始上課後，我自信多了，還在學校音樂會獨奏！',
-      student: '— Mia（10歲），自2023年開始學習'
+      text: '我以前音準常常不準，Lavinia老師教我如何有效練習。上課三年來，我自信多了，還在學校音樂會獨奏！',
+      student: '— Mia（12歲），自2022年開始學習'
     },
     {
       text: 'Lavinia老師讓小提琴變得很有趣！我喜歡學新歌，也喜歡和同學一起合奏。老師總是幫我找我喜歡的音樂。',
-      student: '— Ethan（8歲），自2023年開始學習'
+      student: '— Ethan（10歲），自2023年開始學習'
     }
   ]
 };
+
 
 const ViolinViola = () => {
   const { language } = useLanguage();
