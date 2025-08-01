@@ -224,101 +224,101 @@ const faqData = [
   {
     question: {
       en: 'My child doesn’t know how to read music. Is that okay?',
-      zh: '孩子不會看譜可以學嗎？'
+      tw: '孩子不會看譜可以學嗎？'
     },
     answer: {
       en: 'Absolutely! We start with note reading and rhythm skills from the very beginning—no prior knowledge is required.',
-      zh: '完全沒問題！課程會從認識音符、節奏開始，無需任何基礎。'
+      tw: '完全沒問題！課程會從認識音符、節奏開始，無需任何基礎。'
     }
   },
   {
     question: {
       en: 'My child takes group orchestra at school. Do we still need private lessons?',
-      zh: '孩子在學校有參加樂團，還需要上一對一課嗎？'
+      tw: '孩子在學校有參加樂團，還需要上一對一課嗎？'
     },
     answer: {
       en: 'Yes. Private lessons offer personalized instruction tailored to your child’s needs. Questions are answered immediately, bad habits are corrected early, and progress is faster and more secure.',
-      zh: '需要。一對一課程能針對孩子的需求調整教學，及時解答問題、糾正壞習慣，進步更快也更扎實。'
+      tw: '需要。一對一課程能針對孩子的需求調整教學，及時解答問題、糾正壞習慣，進步更快也更扎實。'
     }
   },
   {
     question: {
       en: 'How long is each lesson, and how often do they occur?',
-      zh: '每次上課多久？多久上一次？'
+      tw: '每次上課多久？多久上一次？'
     },
     answer: {
       en: 'Lessons are held once a week. Typical durations:\n• 30 minutes – young beginners\n• 45 minutes – intermediate students\n• 60 minutes – advanced or older students\nWe’ll choose the right length based on your child’s age and level.',
-      zh: '課程每週一次。一般來說：\n• 30分鐘－幼兒初學\n• 45分鐘－中級學生\n• 60分鐘－高年級或進階學生\n會依年齡與程度建議最適合的課程長度。'
+      tw: '課程每週一次。一般來說：\n• 30分鐘－幼兒初學\n• 45分鐘－中級學生\n• 60分鐘－高年級或進階學生\n會依年齡與程度建議最適合的課程長度。'
     }
   },
   {
     question: {
       en: 'How much practice is expected between lessons?',
-      zh: '課後需要練習多久？'
+      tw: '課後需要練習多久？'
     },
     answer: {
       en: 'Consistency matters more than length. Beginners might practice 15–20 minutes a day; intermediate/advanced students may need 30–60 minutes. I’ll provide tailored practice goals that fit your child’s routine.',
-      zh: '重點是持之以恆。初學者每天15–20分鐘，中高級學生建議30–60分鐘。我會根據孩子的狀況給予個別化的練習建議。'
+      tw: '重點是持之以恆。初學者每天15–20分鐘，中高級學生建議30–60分鐘。我會根據孩子的狀況給予個別化的練習建議。'
     }
   },
   {
     question: {
       en: 'What method or curriculum do you use?',
-      zh: '課程內容和教材是什麼？'
+      tw: '課程內容和教材是什麼？'
     },
     answer: {
       en: 'I combine Suzuki, traditional, and contemporary approaches—blending ear training, note reading, technical studies, and expressive repertoire. Each lesson is customized to the student’s learning style and goals.',
-      zh: '課程融合鈴木、傳統與現代教學法，包含聽力訓練、識譜、技巧練習與多元曲目，並依學生需求量身訂做。'
+      tw: '課程融合鈴木、傳統與現代教學法，包含聽力訓練、識譜、技巧練習與多元曲目，並依學生需求量身訂做。'
     }
   },
   {
     question: {
       en: 'Will my child perform in recitals?',
-      zh: '學生會有演出或發表會嗎？'
+      tw: '學生會有演出或發表會嗎？'
     },
     answer: {
       en: 'Yes! I host regular recitals and encourage all students to participate. Performing builds confidence, sets goals, and creates a joyful sense of accomplishment.',
-      zh: '會！我定期舉辦學生發表會，鼓勵大家參加。演出能建立自信、設定目標，也讓學習更有成就感。'
+      tw: '會！我定期舉辦學生發表會，鼓勵大家參加。演出能建立自信、設定目標，也讓學習更有成就感。'
     }
   },
   {
     question: {
       en: 'Can I sit in on my child’s lesson?',
-      zh: '家長可以旁聽課程嗎？'
+      tw: '家長可以旁聽課程嗎？'
     },
     answer: {
       en: 'Absolutely. For younger children, parent involvement is encouraged—it helps you understand how to support practice at home. You\'re always welcome!',
-      zh: '當然可以！年紀小的學生建議家長參與課程，方便回家協助練習。歡迎家長隨時旁聽。'
+      tw: '當然可以！年紀小的學生建議家長參與課程，方便回家協助練習。歡迎家長隨時旁聽。'
     }
   },
   {
     question: {
       en: 'What if we need to miss a lesson?',
-      zh: '臨時請假怎麼辦？'
+      tw: '臨時請假怎麼辦？'
     },
     answer: {
       en: 'No problem—just give at least 24 hours’ notice for a make-up lesson. I also offer occasional online lessons if you\'re traveling or your child is feeling under the weather.',
-      zh: '只要提前24小時通知即可補課。如遇旅遊或身體不適，也可安排線上課程。'
+      tw: '只要提前24小時通知即可補課。如遇旅遊或身體不適，也可安排線上課程。'
     }
   },
   {
     question: {
       en: 'Do you teach both violin and viola?',
-      zh: '有教中提琴嗎？可以換樂器嗎？'
+      tw: '有教中提琴嗎？可以換樂器嗎？'
     },
     answer: {
       en: 'Yes! While most students begin with violin, I’m happy to teach viola as well. Students are welcome to transition between the two as they grow.',
-      zh: '有的！大多數學生從小提琴開始，之後也歡迎學中提琴，兩者可依興趣與需求轉換。'
+      tw: '有的！大多數學生從小提琴開始，之後也歡迎學中提琴，兩者可依興趣與需求轉換。'
     }
   },
   {
     question: {
       en: 'How will I know if my child is progressing?',
-      zh: '怎麼知道孩子有沒有進步？'
+      tw: '怎麼知道孩子有沒有進步？'
     },
     answer: {
       en: 'I provide regular updates, celebrate milestones, and maintain open communication with parents. You’ll see growth not just in playing skills, but also in confidence, discipline, and musical joy.',
-      zh: '我會定期回饋學習狀況，與家長保持溝通。除了技巧進步，也會看到孩子自信、專注與音樂素養的提升。'
+      tw: '我會定期回饋學習狀況，與家長保持溝通。除了技巧進步，也會看到孩子自信、專注與音樂素養的提升。'
     }
   }
 ];
