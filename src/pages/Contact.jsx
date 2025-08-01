@@ -20,7 +20,7 @@ const text = {
     content: '如需課程諮詢、預約或其他問題，歡迎聯絡我們。',
     ready: {
       heading: '準備好開始了嗎？',
-      buttonText: '預約體驗課'
+      buttonText: '預約初步洽談'
     },
     email: {
       heading: '電子郵件',

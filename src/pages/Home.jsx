@@ -39,7 +39,7 @@ const instrumentText = {
     },
     ready: {
       heading: '準備好開始了嗎？',
-      buttonText: '預約體驗課'
+      buttonText: '預約初步洽談'
     }
   }
 };
