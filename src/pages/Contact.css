@@ -1,0 +1,121 @@
+.contact-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(60,40,120,0.07);
+  padding: 2.5rem 1.5rem 3rem 1.5rem;
+  max-width: 700px;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card-title {
+  font-size: 2rem;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-schedule-btn {
+  background: #3a2c5b;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(60,40,120,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.contact-schedule-btn:hover,
+.contact-schedule-btn:focus {
+  background: #2c2042;
+  box-shadow: 0 4px 16px rgba(60,40,120,0.13);
+}
+
+.contact-email-section {
+  max-width: 700px;
+  margin: 2.5rem auto 0 auto;
+  text-align: center;
+  padding: 1.5rem 0;
+  background: #f4f0fa;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(60,40,120,0.07);
+}
+
+.contact-email-title {
+  font-size: 1.5rem;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.contact-email-address {
+  font-size: 1.2rem;
+  color: #3a2c5b;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 22px;
+  background: #fff;
+  border: 2px solid #eae6f7;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(60,40,120,0.05);
+}
+
+.contact-email-address:hover {
+  background: #eae6f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(60,40,120,0.1);
+  border-color: #d6c9f7;
+}
+
+.contact-email-address::before {
+  content: '📧';
+  margin-right: 0.5rem;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .contact-email-section {
+    padding: 1rem 0;
+  }
+  .contact-email-title {
+    font-size: 1.2rem;
+  }
+  .contact-email-address {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 1.2rem 0.5rem 2rem 0.5rem;
+  }
+  .contact-card-title {
+    font-size: 1.3rem;
+  }
+  .contact-email-title {
+    font-size: 1.2rem;
+  }
+  .contact-email-address {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .contact-schedule-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+} 

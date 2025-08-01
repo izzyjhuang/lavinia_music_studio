@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  background: #f7f6fa;
+  color: #232136;
+  letter-spacing: 0.01em;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 6px 32px rgba(60,40,120,0.07);
+  min-height: 80vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2.2rem 0 1.7rem 0;
+  background: transparent;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  transition: color 0.22s, background 0.22s, border-radius 0.22s, box-shadow 0.22s;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+  color: #7c5e99;
+  background: #f4f0fa;
+  border-bottom: 2px solid #7c5e99;
+  box-shadow: 0 2px 8px rgba(124,94,153,0.07);
+}
+
+select {
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #e0d7f3;
+  background: #f4f0fa;
+  color: #3a2c5b;
+  margin-left: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+}
+
+select:focus {
+  border: 2px solid #7c5e99;
+  outline: none;
+  box-shadow: 0 0 0 2px #e0d7f3;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  color: #3a2c5b;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1.2rem 0.4rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.2rem 0 0.7rem 0;
+  }
+  nav a {
+    font-size: 1.08rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
