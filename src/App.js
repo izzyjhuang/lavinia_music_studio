@@ -38,7 +38,7 @@ function App() {
               <Route path="/tw/contact" element={<Contact />} />
               
               {/* Fallback route */}
-              <Route path="*" element={<Navigate to="/about" />} />
+              
             </Routes>
           </div>
         </>
