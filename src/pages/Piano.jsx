@@ -189,7 +189,7 @@ const headings = {
   en: {
     why: 'Why Learn Piano?',
     curriculum: 'Focus for Every Stage',
-    recitals: 'Piano Recitals',
+    recitals: 'Student Highlights',
     faq: 'Frequently Asked Questions',
     testimonials: 'Student Testimonials',
     cta: 'Ready to Begin?',
@@ -198,7 +198,7 @@ const headings = {
   tw: {
     why: '為什麼學鋼琴？',
     curriculum: '每個階段的學習重點',
-    recitals: '鋼琴發表會',
+    recitals: '學生亮點',
     faq: '常見問題',
     testimonials: '學生感言',
     cta: '準備好開始了嗎？',
