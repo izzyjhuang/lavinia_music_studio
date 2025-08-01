@@ -1,6 +1,6 @@
 import React from 'react';
 import './CompetitionSection.css';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from './LanguageWrapper';
 
 const competitionText = {
   en: {
@@ -13,7 +13,7 @@ const competitionText = {
       '<strong>Section Violinist</strong> for the<strong> ILMEA District Orchestra</strong>, and even the role of <strong>Principal Violist</strong> in the<strong> ILMEA All-State Orchestra</strong>'
     ]
   },
-  zh: {
+  tw: {
     heading: '學生成就',
     competitions: [
       '奏鳴曲與小奏鳴曲比賽<strong>金牌</strong>',
@@ -27,7 +27,9 @@ const competitionText = {
 
 const CompetitionSection = () => {
   const { language } = useLanguage();
-  const t = competitionText[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = competitionText[langKey];
   return (
     <section className="competition-section">
       <h2>{t.heading}</h2>

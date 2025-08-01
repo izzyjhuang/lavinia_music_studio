@@ -6,11 +6,11 @@ import overlayImg from '../images/playing-piano-home.jpeg';
 import teacherPic from '../images/teacher-pic.jpeg';
 import pianoImg from '../images/playing-piano.jpeg';
 import violinImg from '../images/playing-violin.jpeg';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../components/LanguageWrapper';
 
 const missionText = {
   en: `Welcome! I’m Lavinia, a passionate teacher dedicated to nurturing each student’s unique musical voice. Whether you’re just starting or preparing for competitions, I offer tailored piano, violin, and viola lessons that build skill, confidence, and joy.`,
-  zh: `歡迎！我是Lavinia，一位熱愛教學的老師，致力於啟發每位學生獨特的音樂聲音。不論是初學還是備賽，我都提供量身打造的鋼琴、小提琴與中提琴課程，幫助學生建立技巧、自信與音樂的喜悅。`
+  tw: `歡迎！我是Lavinia，一位熱愛教學的老師，致力於啟發每位學生獨特的音樂聲音。不論是初學還是備賽，我都提供量身打造的鋼琴、小提琴與中提琴課程，幫助學生建立技巧、自信與音樂的喜悅。`
 };
 
 const instrumentText = {
@@ -28,7 +28,7 @@ const instrumentText = {
       buttonText: 'Schedule an Intro Call'
     }
   },
-  zh: {
+  tw: {
     piano: {
       title: '鋼琴課程',
       desc: '根據您的目標和學習風格，提供量身打造的鋼琴課程。'
@@ -46,6 +46,8 @@ const instrumentText = {
 
 const Home = () => {
   const { language } = useLanguage();
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
   return (
     <>
       <Link to="/" className="home-banner-link">
@@ -61,7 +63,7 @@ const Home = () => {
           <img src={teacherPic} alt="Teacher" className="home-mission-img" />
         </div>
         <div className="home-mission-bio">
-          <p>{missionText[language]}</p>
+          <p>{missionText[langKey]}</p>
         </div>
       </section>
       <section className="home-instruments-section">
@@ -69,8 +71,8 @@ const Home = () => {
           <Link to="/piano" className="home-instrument-link">
             <div className="home-instrument-content">
               <img src={pianoImg} alt="Piano" className="home-instrument-img" />
-              <h3>{instrumentText[language].piano.title}</h3>
-              <p>{instrumentText[language].piano.desc}</p>
+              <h3>{instrumentText[langKey].piano.title}</h3>
+              <p>{instrumentText[langKey].piano.desc}</p>
             </div>
           </Link>
         </div>
@@ -78,16 +80,16 @@ const Home = () => {
           <Link to="/violin-viola" className="home-instrument-link">
             <div className="home-instrument-content">
               <img src={violinImg} alt="Violin" className="home-instrument-img" />
-              <h3>{instrumentText[language].violin.title}</h3>
-              <p>{instrumentText[language].violin.desc}</p>
+              <h3>{instrumentText[langKey].violin.title}</h3>
+              <p>{instrumentText[langKey].violin.desc}</p>
             </div>
           </Link>
         </div>
       </section>
       {/* Ready to Begin Section */}
       <section className="home-ready-section">
-        <h2>{instrumentText[language].ready.heading}</h2>
-        <a href="https://calendly.com/lavinialeemusicstudio/" className="home-ready-button" target="_blank" rel="noopener noreferrer">{instrumentText[language].ready.buttonText}</a>
+        <h2>{instrumentText[langKey].ready.heading}</h2>
+        <a href="https://calendly.com/lavinialeemusicstudio/" className="home-ready-button" target="_blank" rel="noopener noreferrer">{instrumentText[langKey].ready.buttonText}</a>
       </section>
     </>
   );

@@ -3,15 +3,15 @@ import './LocationSection.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from './LanguageWrapper';
 
 const serviceAreas = [
-  { name: { en: 'Northbrook', zh: 'Northbrook' }, coords: [42.1275, -87.8289] },
-  { name: { en: 'Glenview', zh: 'Glenview' }, coords: [42.0723, -87.8150] },
-  { name: { en: 'Northfield', zh: 'Northfield' }, coords: [42.1011, -87.7712] },
-  { name: { en: 'Lake Forest', zh: 'Lake Forest' }, coords: [42.2586, -87.8406] },
-  { name: { en: 'Winnetka', zh: 'Winnetka' }, coords: [42.1081, -87.7359] },
-  { name: { en: 'Wilmette', zh: 'Wilmette' }, coords: [42.0723, -87.7228] },
+  { name: { en: 'Northbrook', tw: 'Northbrook' }, coords: [42.1275, -87.8289] },
+  { name: { en: 'Glenview', tw: 'Glenview' }, coords: [42.0723, -87.8150] },
+  { name: { en: 'Northfield', tw: 'Northfield' }, coords: [42.1011, -87.7712] },
+  { name: { en: 'Lake Forest', tw: 'Lake Forest' }, coords: [42.2586, -87.8406] },
+  { name: { en: 'Winnetka', tw: 'Winnetka' }, coords: [42.1081, -87.7359] },
+  { name: { en: 'Wilmette', tw: 'Wilmette' }, coords: [42.0723, -87.7228] },
 ];
 
 const locationText = {
@@ -19,7 +19,7 @@ const locationText = {
     heading: 'Serving the Chicago North Shore Community',
     caption: 'Providing in-person lessons across the Chicago North Shore suburbs and virtual lessons throughout the greater Chicagoland area.'
   },
-  zh: {
+  tw: {
     heading: '服務芝加哥北郊社區',
     caption: '提供芝加哥北郊地區面授課程，並於大芝加哥地區提供線上課程。'
   }
@@ -37,7 +37,9 @@ const markerIcon = new L.Icon({
 
 const LocationSection = () => {
   const { language } = useLanguage();
-  const t = locationText[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = locationText[langKey];
   return (
     <section className="location-section">
       <h2>{t.heading}</h2>

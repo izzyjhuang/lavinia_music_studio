@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../components/LanguageWrapper';
 import './Contact.css';
 
 const text = {
@@ -15,7 +15,7 @@ const text = {
       address: 'lavinialeemusicstudio@gmail.com'
     }
   },
-  zh: {
+  tw: {
     title: '聯絡',
     content: '如需課程諮詢、預約或其他問題，歡迎聯絡我們。',
     ready: {
@@ -31,26 +31,28 @@ const text = {
 
 const Contact = () => {
   const { language } = useLanguage();
-  const t = text[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = text[langKey];
   return (
     <div>
       <h1>{t.title}</h1>
       <p>{t.content}</p>
       <div className="contact-card">
-        <h2 className="contact-card-title">{text[language].ready.heading}</h2>
+        <h2 className="contact-card-title">{t.ready.heading}</h2>
         <a
           className="contact-schedule-btn"
           href="https://calendly.com/lavinialeemusicstudio/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {text[language].ready.buttonText}
+          {t.ready.buttonText}
         </a>
       </div>
       <div className="contact-email-section">
-        <h3 className="contact-email-title">{text[language].email.heading}</h3>
+        <h3 className="contact-email-title">{t.email.heading}</h3>
         <a href="mailto:lavinialeemusicstudio@gmail.com" className="contact-email-address">
-          {text[language].email.address}
+          {t.email.address}
         </a>
       </div>
     </div>

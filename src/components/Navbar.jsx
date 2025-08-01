@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from './LanguageWrapper';
 
 const navText = {
   en: {
@@ -11,7 +11,7 @@ const navText = {
     students: 'Student Resources',
     contact: 'Contact',
   },
-  zh: {
+  tw: {
     about: '關於我',
     piano: '鋼琴',
     violin: '小提琴/中提琴',
@@ -23,7 +23,9 @@ const navText = {
 const Navbar = () => {
   const { language } = useLanguage();
   const location = useLocation();
-  const t = navText[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = navText[langKey];
   return (
     <nav>
       <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>{t.about}</Link>

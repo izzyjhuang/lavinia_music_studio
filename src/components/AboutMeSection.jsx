@@ -1,20 +1,22 @@
 import React from 'react';
 import './AboutMeSection.css';
 import teacherPic from '../images/about-me.jpeg';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from './LanguageWrapper';
 
 const aboutText = {
   en: {
-    bio: `I’m Lavinia Lee, a passionate violin, viola, and piano teacher with Masters degrees from Yale and Northwestern, and over 20 years of teaching and performing experience. My approach blends Suzuki method, music theory, and orchestral training to help students thrive musically and personally. Whether your child is just starting or preparing for auditions, I’m committed to nurturing their growth with warmth, structure, and expert guidance.`
+    bio: `I'm Lavinia Lee, a passionate violin, viola, and piano teacher with Masters degrees from Yale and Northwestern, and over 20 years of teaching and performing experience. My approach blends Suzuki method, music theory, and orchestral training to help students thrive musically and personally. Whether your child is just starting or preparing for auditions, I'm committed to nurturing their growth with warmth, structure, and expert guidance.`
   },
-  zh: {
+  tw: {
     bio: `我是李老師（Lavinia Lee），主授小提琴、中提琴與鋼琴，畢業於耶魯大學碩士與西北大學，擁有超過二十年教學與演奏經驗。我的教學融合鈴木教學法、樂理與管弦樂訓練，幫助學生在音樂與個人成長上都能茁壯。不論您的孩子是初學還是備考，我都以溫暖、結構化與專業的指導，陪伴他們成長。`
   }
 };
 
 const AboutMeSection = () => {
   const { language } = useLanguage();
-  const t = aboutText[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = aboutText[langKey];
   return (
     <section className="aboutme-section">
       <div className="aboutme-pic">

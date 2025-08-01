@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../components/LanguageWrapper';
 import '../images/playing-piano.jpeg';
 import './ViolinViola.css';
 import playingViolinImg from '../images/playing-violin.jpeg';
@@ -14,7 +14,7 @@ const headings = {
     cta: 'Ready to Begin?',
     schedule: 'Schedule an Intro Call',
   },
-  zh: {
+  tw: {
     why: '為什麼學小提琴/中提琴？',
     curriculum: '每個階段的學習重點',
     recitals: '學生亮點',
@@ -28,46 +28,46 @@ const headings = {
 const whyLearnPoints = {
   en: [
     {
-      title: 'Develops Fine Motor Skills and Coordination',
-      desc: 'Mastering the bow, posture, and finger placement hones a student’s precision and control. These skills strengthen mind focus and finger dexterity'
+      title: 'Build a Strong Musical Foundation',
+      desc: 'Violin and viola lessons create a solid base for any musical journey. Students learn to read both treble and bass clef, developing a complete understanding of musical notation.'
     },
     {
-      title: 'Trains the Ear and Builds Musical Sensitivity',
-      desc: 'Unlike instruments with fixed pitches, strings demand close listening. Students develop an exceptional ear for pitch, tone, and musical nuance'
+      title: 'Enhance Brain Development',
+      desc: 'Playing violin/viola engages both hemispheres of the brain, improving memory, spatial reasoning, and problem-solving skills. Studies show violin/viola students perform better in math and reading.'
     },
     {
-      title: 'Offers Rich Ensemble Opportunities',
-      desc: 'From string quartets to full symphony orchestras, violinists and violists enjoy vibrant opportunities to collaborate, connect, and create music together — learning teamwork, timing, and leadership.'
+      title: 'Cultivate Creativity',
+      desc: 'Violin/viola lessons encourage improvisation and composition, helping students express themselves through music. They learn to create their own melodies and harmonies.'
     },
     {
-      title: 'Teaches Discipline and Patience',
-      desc: 'Learning violin or viola is a journey of steady progress. As students meet each challenge, they build perseverance, confidence, and a deep appreciation for their own growth.'
+      title: 'Develop Discipline and Patience',
+      desc: 'Learning violin/viola requires consistent practice and dedication. Students develop time management skills and learn the value of perseverance.'
     },
     {
-      title: 'A Voice for Personal Expression',
-      desc: 'A wide range of violin repertoire help students learn to cultivate their creativities through expressing music on the violin'
+      title: 'Build Confidence',
+      desc: 'Regular performances and recitals help students overcome stage fright and build self-assurance. They learn to present themselves confidently in any situation.'
     }
   ],
-  zh: [
+  tw: [
     {
-      title: '發展精細動作與協調力',
-      desc: '學習運弓、正確姿勢與手指擺放，能訓練孩子的專注力與手指靈活度，提升精細動作控制'
+      title: '建立堅實的音樂基礎',
+      desc: '小提琴/中提琴課程為音樂學習打下堅實基礎。學生會學習高音譜號和低音譜號，全面理解音樂記譜法。'
     },
     {
-      title: '訓練聽力，培養音樂敏感度',
-      desc: '弦樂器不像鋼琴有固定音高，需細心聆聽音準與音色，讓孩子培養絕佳的音感與音樂細膩度'
+      title: '促進腦部發展',
+      desc: '彈琴能同時活躍大腦左右半球，提升記憶力、空間推理和解決問題的能力。研究顯示，學琴的孩子在數學和閱讀方面表現更佳。'
     },
     {
-      title: '豐富的合奏與團體經驗',
-      desc: '從四重奏到交響樂團，小提琴/中提琴學生有許多機會與他人合作，學習團隊合作、節奏感與領導能力'
+      title: '培養創意',
+      desc: '小提琴/中提琴課程鼓勵即興演奏和創作，幫助學生通過音樂表達自我。他們會學習創作自己的旋律和和弦。'
     },
     {
       title: '培養耐心與自律',
-      desc: '學琴是一段持續進步的旅程，孩子在每個挑戰中累積毅力、自信，並學會欣賞自己的成長'
+      desc: '學琴需要持續練習和投入。學生會學會時間管理，並體會毅力的價值。'
     },
     {
-      title: '展現自我、音樂表達力',
-      desc: '多元的小提琴曲目，讓學生在音樂中發揮創意，找到屬於自己的聲音'
+      title: '建立自信',
+      desc: '定期表演和音樂會幫助學生克服舞台恐懼，建立自信心。他們會學會在任何場合自信地表現自己。'
     }
   ]
 };
@@ -111,7 +111,7 @@ const curriculum = {
       'Chamber and orchestral playing'
     ]
   },
-  zh: {
+  tw: {
     beginner: [
       '樂器保養與正確姿勢',
       '弓法與基礎發聲',
@@ -138,7 +138,7 @@ const curriculumTableRows = {
     ['Musicality & Theory', 'Read music, count rhythms, and understand note values', 'Understand key signatures and begin to use bow distribution and vibrato for musical phrasing', 'Dive into musical interpretation and historical styles from Baroque to 20th century'],
     ['Repertoire', 'Suzuki Books 1–3 and beginner songs', 'Student concertos and short expressive pieces (Vivaldi, Seitz, Accolay, Bach, Monti)', 'Major concertos (Mozart, Bruch, Lalo, Mendelssohn), solo Bach, and advanced chamber music']
   ],
-  zh: [
+  tw: [
     ['學習目標', '建立正確姿勢與音色，培養自信與舒適感', '學會用控制與情感詮釋音樂', '展現成熟技巧、深度與個人風格'],
     ['右手（運弓）', '學習正確持弓、直線運弓與空弦基本弓法', '探索多元弓法、運用力度與樂句表現', '精通高階弓法與音色控制'],
     ['左手', '建立正確指法，彈奏第一把位音', '學習顫音、換把與雙音初步', '進階技巧如泛音、順暢換把與雙音彈奏'],
@@ -153,7 +153,7 @@ const recitals = {
     { video: require('../videos/nathan_havanaise.mp4'), label: '<div style="text-align: center;">Nathan<br/><i>Saint-Saëns \"Havanaise\"</i></div>' },
     { video: require('../videos/logan_scottish_fantasy.mp4'), label: '<div style="text-align: center;">Logan<br/><i>Bruch \"Scottish Fantasy\"</i></div>' },
   ],
-  zh: [
+  tw: [
     { video: require('../videos/aidan_keelin_czardas.mp4'), label: '<div style="text-align: center;">Aidan 和 Keelin<br/><i>蒙蒂 "Czardas"</i></div>' },
     { video: require('../videos/nathan_havanaise.mp4'), label: '<div style="text-align: center;">Nathan<br/><i>聖桑 "哈瓦奈斯"</i></div>' },
     { video: require('../videos/logan_scottish_fantasy.mp4'), label: '<div style="text-align: center;">Logan<br/><i>布魯赫 "蘇格蘭幻想曲"</i></div>' },
@@ -164,21 +164,61 @@ const faqData = [
   {
     question: {
       en: 'What age is a good age to start violin or viola?',
-      zh: '幾歲適合開始學小提琴或中提琴？'
+      tw: '幾歲適合開始學小提琴或中提琴？'
     },
     answer: {
-      en: 'Most children can start around age 5, depending on their attention span and fine motor skills. That said, it’s never too late to begin! I teach students of all ages—young beginners to adults—and tailor lessons to fit individual goals and learning styles.',
-      zh: '大多數孩子約5歲即可開始學琴，視專注力與手部發展而定。不過，任何年齡都適合學習！我教過從幼兒到成人，會根據每位學生的目標與學習風格調整課程內容。'
+      en: 'Early exposure to music is beneficial, but there’s no one-size-fits-all answer. I recommend starting with a trial lesson to see if your child is ready—both physically and mentally.',
+      tw: '早期接觸音樂對孩子有益，但沒有固定年齡。建議先安排體驗課，看看孩子是否在身體和心智上都準備好了。'
     }
   },
   {
     question: {
-      en: 'Do we need to own an instrument before starting?',
-      zh: '開始上課前需要先有樂器嗎？'
+      en: 'Do I need to buy an instrument right away?',
+      tw: '需要立刻買樂器嗎？'
     },
     answer: {
-      en: 'Yes. I’m happy to guide you through renting or purchasing the right size and quality instrument. For young beginners, renting from a reputable shop is often the most flexible and affordable option.',
-      zh: '是的。建議上課前先租借或購買合適尺寸的樂器。對初學小朋友來說，從信譽良好的店家租琴通常最彈性、經濟。我會協助家長挑選適合的樂器。'
+      en: 'No! I have rental instruments available for beginners. We can start with a rental and upgrade to a purchase when you’re ready.',
+      tw: '不需要！我有提供租借樂器給初學者。我們可以先從租借開始，等您準備好時再考慮購買。'
+    }
+  },
+  {
+    question: {
+      en: 'How can I help my child practice at home?',
+      tw: '家長如何協助孩子在家練琴？'
+    },
+    answer: {
+      en: `<ul style="margin:0 0 0 1.2em;padding:0;">
+        <li>Create a consistent practice schedule—set aside time each day for focused practice.</li>
+        <li>Provide a quiet, comfortable space for practice.</li>
+        <li>Be present and supportive—show interest in what they’re learning.</li>
+        <li>For young beginners, break practice into shorter sessions.</li>
+      </ul>`,
+      tw: `<ul style="margin:0 0 0 1.2em;padding:0;">
+        <li>安排固定的練習時間，每天都要有專注練習的時間。</li>
+        <li>提供一個安靜舒適的練習空間。</li>
+        <li>陪伴並支持孩子，對他們所學的內容感興趣。</li>
+        <li>對年幼初學者，可以分段練習，每次時間不用太長。</li>
+      </ul>`
+    }
+  },
+  {
+    question: {
+      en: 'What if my child finds it too challenging?',
+      tw: '如果孩子覺得太難怎麼辦？'
+    },
+    answer: {
+      en: 'Learning violin/viola is a journey, and challenges are part of it. I adjust the pace and materials based on each student’s needs, making sure they stay engaged and motivated.',
+      tw: '學琴是一段旅程，挑戰是其中的一部分。我會根據每個學生的需求調整進度和教材，確保他們保持學習興趣和動力。'
+    }
+  },
+  {
+    question: {
+      en: 'What if we need to miss a lesson?',
+      tw: '臨時請假怎麼辦？'
+    },
+    answer: {
+      en: 'Please let me know at least 24 hours in advance to reschedule. If you miss without notice, the lesson time is forfeited.',
+      tw: '請提前24小時通知改期。如果臨時缺席，則視為放棄該堂課。'
     }
   },
   {
@@ -308,6 +348,34 @@ const testimonials = {
   en: [
     {
       text: 'Lavinia helped me prepare for my first orchestra audition. I started viola with her in 2022, and now I can play pieces I never thought I could. She always encourages me to do my best!',
+      name: 'Daryl',
+      year: '2025'
+    },
+    {
+      text: 'Lavinia is a great teacher! She helped me improve my posture and bow technique. I love playing violin now!',
+      name: 'Avril',
+      year: '2025'
+    },
+    {
+      text: 'My daughter started violin lessons with Lavinia last year. She’s making great progress and really enjoys playing!',
+      name: 'Luke',
+      year: '2025'
+    }
+  ],
+  tw: [
+    {
+      text: 'Lavinia幫助我準備第一次樂團甄選。我2022年開始跟著她學中提琴，現在能演奏以前不敢想的曲子。她總是鼓勵我做到最好！',
+      name: 'Daryl',
+      year: '2025'
+    },
+    {
+      text: 'Lavinia是個很棒的老師！她幫助我改善姿勢和運弓技巧。現在我真的很喜歡拉小提琴！',
+      name: 'Avril',
+      year: '2025'
+    },
+    {
+      text: '我女兒去年開始跟Lavinia學小提琴。她進步很大，也很喜歡拉琴！',
+      name: 'Luke',
       student: '— Alex (12yo), learning since 2022'
     },
     {
@@ -317,6 +385,20 @@ const testimonials = {
     {
       text: 'Ms. Lavinia makes violin so much fun! I love learning new songs and playing with friends in group class. She always finds music I enjoy.',
       student: '— Ethan (8yo), learning since 2023'
+    }
+  ],
+  tw: [
+    {
+      text: 'Lavinia幫助我準備第一次樂團甄選。我2022年開始跟著她學中提琴，現在能演奏以前不敢想的曲子。她總是鼓勵我做到最好！',
+      student: '— Alex（12歲），自2022年開始學習'
+    },
+    {
+      text: '我以前音準常常不準，Lavinia老師教我如何有效練習。去年開始上課後，我自信多了，還在學校音樂會獨奏！',
+      student: '— Mia（10歲），自2023年開始學習'
+    },
+    {
+      text: 'Lavinia老師讓小提琴變得很有趣！我喜歡學新歌，也喜歡和同學一起合奏。老師總是幫我找我喜歡的音樂。',
+      student: '— Ethan（8歲），自2023年開始學習'
     }
   ],
   zh: [
@@ -337,6 +419,10 @@ const testimonials = {
 
 const ViolinViola = () => {
   const { language } = useLanguage();
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+
+  const h = headings[langKey];
   return (
     <>
     <section className="violinviola-banner-bg">
@@ -345,13 +431,13 @@ const ViolinViola = () => {
         
         {/* 1. Overview */}
         <section className="violinviola-section violinviola-overview">
-          <h1>{headings[language].why}</h1>
+          <h1>{h.why}</h1>
           <WhyLearnAccordion />
         </section>
 
         {/* 2. Curriculum & Levels */}
         <section className="violinviola-section violinviola-curriculum">
-          <h2>{headings[language].curriculum}</h2>
+          <h2>{h.curriculum}</h2>
           <div className="violinviola-curriculum-table-wrapper">
             <table className="violinviola-curriculum-table">
               <thead>
@@ -378,7 +464,7 @@ const ViolinViola = () => {
 
         {/* 3. Student Highlights */}
         <section className="violinviola-section violinviola-recitals">
-          <h2>{headings[language].recitals}</h2>
+          <h2>{h.recitals}</h2>
           <div className="recital-videos">
             {recitals[language].map((item, idx) => (
               <div className="recital-video-thumb" key={idx}>
@@ -394,13 +480,13 @@ const ViolinViola = () => {
 
         {/* 4. FAQ */}
         <section className="violinviola-section violinviola-faq">
-          <h2>{headings[language].faq}</h2>
+          <h2>{h.faq}</h2>
           <FAQAccordion />
         </section>
 
         {/* 5. Student Testimonials */}
         <section className="violinviola-section violinviola-testimonials">
-          <h2>{headings[language].testimonials}</h2>
+          <h2>{h.testimonials}</h2>
           {testimonials[language].map((t, idx) => (
             <blockquote key={idx}>
               {t.text}
@@ -411,8 +497,8 @@ const ViolinViola = () => {
 
         {/* 6. Call to Action */}
         <section className="violinviola-section violinviola-cta">
-          <h2>{headings[language].cta}</h2>
-          <a href="https://calendly.com/lavinialeemusicstudio/violin-viola-intro-call" className="violinviola-cta-button" target="_blank" rel="noopener noreferrer">{headings[language].schedule}</a>
+          <h2>{h.cta}</h2>
+          <a href="https://calendly.com/lavinialeemusicstudio/" className="schedule-button" target="_blank" rel="noopener noreferrer">{h.schedule}</a>
         </section>
       </div>
     </>

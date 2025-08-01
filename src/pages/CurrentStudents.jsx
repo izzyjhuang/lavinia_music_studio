@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../components/LanguageWrapper';
 
 const text = {
   en: {
@@ -9,7 +9,7 @@ const text = {
     submit: 'Submit',
     error: 'Incorrect password. Please try again.'
   },
-  zh: {
+  tw: {
     title: '學生資源',
     content: '提供學生資源、公告與課程表。',
     enterPassword: '請輸入密碼以瀏覽本頁內容：',
@@ -22,7 +22,9 @@ const PASSWORD = 'Brahms';
 
 const CurrentStudents = () => {
   const { language } = useLanguage();
-  const t = text[language];
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+  const t = text[langKey];
   const [input, setInput] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState('');

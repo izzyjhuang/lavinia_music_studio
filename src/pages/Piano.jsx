@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../components/LanguageWrapper';
 import playingPianoImg from '../images/playing-piano.jpeg';
 import './Piano.css';
 
@@ -8,7 +8,7 @@ const text = {
     title: 'Piano',
     content: 'Explore piano lessons, curriculum, and resources for students of all levels.'
   },
-  zh: {
+  tw: {
     title: '鋼琴',
     content: '探索適合各個程度學生的鋼琴課程、教學大綱與資源。'
   }
@@ -18,27 +18,27 @@ const faqData = [
   {
     question: {
       en: 'Why choose private lessons over group classes or apps?',
-      zh: '為什麼選擇一對一課程而不是團體班或學習App？'
+      tw: '為什麼選擇一對一課程而不是團體班或學習App？'
     },
     answer: {
       en: 'Private lessons offer customized instruction, faster progress, and correction of bad habits—none of which apps or group classes can fully provide.',
-      zh: '一對一課程能針對學生個別需求調整教學，進步更快，也能及時糾正壞習慣，這是團體班或App無法做到的。'
+      tw: '一對一課程能針對學生個別需求調整教學，進步更快，也能及時糾正壞習慣，這是團體班或App無法做到的。'
     }
   },
   {
     question: {
       en: 'How long should my child practice each day?',
-      zh: '每天應該練習多久？'
+      tw: '每天應該練習多久？'
     },
     answer: {
       en: 'At least as long as their weekly lesson—typically 15–30 minutes a day for beginners. Consistency matters most.',
-      zh: '建議每天練習的時間至少和每週上課時間一樣長。初學者通常每天15–30分鐘，重點是持之以恆。'
+      tw: '建議每天練習的時間至少和每週上課時間一樣長。初學者通常每天15–30分鐘，重點是持之以恆。'
     }
   },
   {
     question: {
       en: 'How can I help my children practice at home?',
-      zh: '家長如何協助孩子在家練琴？'
+      tw: '家長如何協助孩子在家練琴？'
     },
     answer: {
       en: `<ul style="margin:0 0 0 1.2em;padding:0;">
@@ -47,7 +47,7 @@ const faqData = [
         <li>Sit with your child occasionally and ask them to show you what they’re learning.</li>
         <li>For young beginners, short, frequent sessions are more effective than long, infrequent ones.</li>
       </ul>`,
-      zh: `<ul style="margin:0 0 0 1.2em;padding:0;">
+      tw: `<ul style="margin:0 0 0 1.2em;padding:0;">
         <li>安排固定的練琴時間，並營造安靜無干擾的環境。</li>
         <li>多給予鼓勵，肯定孩子的進步。</li>
         <li>偶爾陪伴孩子練習，請他們向您展示所學內容。</li>
@@ -58,61 +58,61 @@ const faqData = [
   {
     question: {
       en: 'Can parents sit in on the lesson?',
-      zh: '家長可以旁聽課程嗎？'
+      tw: '家長可以旁聽課程嗎？'
     },
     answer: {
       en: 'Yes! For young children (under 7), parent observation is encouraged. Older students may benefit more from independent lessons—we’ll find what works best.',
-      zh: '可以！7歲以下的小朋友建議家長旁聽。年紀較大的學生則可依情況選擇是否獨立上課，我們會一起找出最適合的方式。'
+      tw: '可以！7歲以下的小朋友建議家長旁聽。年紀較大的學生則可依情況選擇是否獨立上課，我們會一起找出最適合的方式。'
     }
   },
   {
     question: {
       en: 'What is your policy for missed or canceled lessons?',
-      zh: '請假或取消課程的規定是什麼？'
+      tw: '請假或取消課程的規定是什麼？'
     },
     answer: {
       en: 'Please give at least 24 hours’ notice to reschedule. Late cancellations are forfeited, as the time is reserved exclusively for your child.',
-      zh: '如需請假或改期，請提前24小時通知。臨時取消則視同上課，因為該時段已為您的孩子保留。'
+      tw: '如需請假或改期，請提前24小時通知。臨時取消則視同上課，因為該時段已為您的孩子保留。'
     }
   },
   {
     question: {
       en: 'What if my child loses interest?',
-      zh: '如果孩子對學琴失去興趣怎麼辦？'
+      tw: '如果孩子對學琴失去興趣怎麼辦？'
     },
     answer: {
       en: 'It happens! I personalize lessons to keep things fresh and engaging, and we adjust goals when needed to reignite motivation.',
-      zh: '這是常見的狀況！我會調整課程內容，讓學習保持新鮮感，也會和學生一起設定新目標，重新激發學習動力。'
+      tw: '這是常見的狀況！我會調整課程內容，讓學習保持新鮮感，也會和學生一起設定新目標，重新激發學習動力。'
     }
   },
   {
     question: {
       en: 'What kind of music will my child learn?',
-      zh: '孩子會學什麼類型的音樂？'
+      tw: '孩子會學什麼類型的音樂？'
     },
     answer: {
       en: 'We start with fun and familiar songs. As students grow, they explore classical styles, pop, jazz, and more based on their interests.',
-      zh: '初學會從有趣、熟悉的曲子開始，之後會依學生興趣學習古典、流行、爵士等不同風格。'
+      tw: '初學會從有趣、熟悉的曲子開始，之後會依學生興趣學習古典、流行、爵士等不同風格。'
     }
   },
   {
     question: {
       en: 'Do you encourage competitions?',
-      zh: '會鼓勵參加比賽嗎？'
+      tw: '會鼓勵參加比賽嗎？'
     },
     answer: {
       en: 'Yes! Intermediate students are encouraged to join local events like the Sonata & Sonatina Festival to build confidence and performance experience.',
-      zh: '會的！中級以上學生鼓勵參加像Sonata & Sonatina Festival這類比賽，累積舞台經驗與自信。'
+      tw: '會的！中級以上學生鼓勵參加像Sonata & Sonatina Festival這類比賽，累積舞台經驗與自信。'
     }
   },
   {
     question: {
       en: 'How often do you hold recitals?',
-      zh: '多久舉辦一次發表會？'
+      tw: '多久舉辦一次發表會？'
     },
     answer: {
       en: 'Twice a year—winter and spring. Recitals are low-pressure and a great way for students to celebrate their progress.',
-      zh: '每年舉辦兩次發表會（冬季和春季），氣氛輕鬆，是學生展現成果、建立自信的好機會。'
+      tw: '每年舉辦兩次發表會（冬季和春季），氣氛輕鬆，是學生展現成果、建立自信的好機會。'
     }
   }
 ];
@@ -142,7 +142,23 @@ const whyLearnPianoPoints = {
   en: [
     {
       title: 'Build a Strong Musical Foundation',
-      desc: 'Piano nurtures listening skills, pitch accuracy, and rhythmic precision—essential elements of musicianship.'
+      desc: 'From reading music to understanding rhythm, piano lessons create a solid base for any musical journey. Students learn to read both treble and bass clef, developing a complete understanding of musical notation.'
+    },
+    {
+      title: 'Enhance Brain Development',
+      desc: 'Playing piano engages both hemispheres of the brain, improving memory, spatial reasoning, and problem-solving skills. Studies show piano students perform better in math and reading.'
+    },
+    {
+      title: 'Cultivate Creativity',
+      desc: 'Piano lessons encourage improvisation and composition, helping students express themselves through music. They learn to create their own melodies and harmonies.'
+    },
+    {
+      title: 'Develop Discipline and Patience',
+      desc: 'Learning piano requires consistent practice and dedication. Students develop time management skills and learn the value of perseverance.'
+    },
+    {
+      title: 'Build Confidence',
+      desc: 'Regular performances and recitals help students overcome stage fright and build self-assurance. They learn to present themselves confidently in any situation.'
     },
     {
       title: 'Understand Music Visually and Intuitively',
@@ -161,26 +177,42 @@ const whyLearnPianoPoints = {
       desc: 'Whether it\'s mastering a new skill or performing at a recital, each milestone helps students develop confidence and a sense of accomplishment.'
     }
   ],
-  zh: [
+  tw: [
     {
       title: '建立堅實的音樂基礎',
-      desc: '鋼琴培養聆聽力、音準與節奏感，這些都是音樂素養的關鍵。'
+      desc: '從讀譜到理解節奏，鋼琴課為任何音樂之旅奠定堅實的基礎。學生學習閱讀高音譜號和低音譜號，建立完整的音樂符號理解能力。'
+    },
+    {
+      title: '提升腦力發展',
+      desc: '彈鋼琴能同時活躍大腦左右半球，提升記憶力、空間推理和解決問題的能力。研究顯示，學習鋼琴的學生數學和閱讀能力更優秀。'
+    },
+    {
+      title: '培養創意',
+      desc: '鋼琴課鼓勵即興演奏和作曲，幫助學生通過音樂表達自我。他們學習創作自己的旋律和和聲。'
+    },
+    {
+      title: '培養紀律和耐心',
+      desc: '學習鋼琴需要持之以恆的練習和專注。學生發展時間管理能力，學習毅力的價值。'
+    },
+    {
+      title: '建立自信',
+      desc: '定期表演和發表會幫助學生克服舞台緊張，建立自信心。他們學習在各種場合自信地呈現自己。'
     },
     {
       title: '直觀理解音樂',
-      desc: '鍵盤排列讓樂理變得具體易懂，是初學者理想的第一樂器。'
+      desc: '琴鍵布局讓音樂理論活起來，使鋼琴成為任何有志於音樂者理想的首選樂器。'
     },
     {
-      title: '提升腦力與協調',
-      desc: '彈琴強化記憶、專注力與手眼協調，並透過音樂邏輯訓練思考。'
+      title: '增強腦力與協調性',
+      desc: '彈鋼琴能強化記憶力、專注力，提升手眼協調能力，同時通過音樂模式培養邏輯思維。'
     },
     {
-      title: '釋放創意',
-      desc: '從古典到現代，豐富的鋼琴曲目激發學生探索並表達自我。'
+      title: '通過曲目釋放創意',
+      desc: '從古典到現代，豐富的鋼琴曲目邀請學生探索並表達他們獨特的音樂聲音。'
     },
     {
-      title: '自信成長',
-      desc: '每個學習與演出的里程碑，都是自信與成就感的累積。'
+      title: '通過成就建立自信',
+      desc: '無論是掌握新技能還是發表會表演，每個里程碑都幫助學生建立自信和成就感。'
     }
   ]
 };
@@ -190,84 +222,19 @@ const headings = {
     why: 'Why Learn Piano?',
     curriculum: 'Focus for Every Stage',
     recitals: 'Piano Recitals',
-    practice: 'At-Home Practice Support',
     faq: 'Frequently Asked Questions',
     testimonials: 'Student Testimonials',
-    cta: 'Ready to Begin?',
-    schedule: 'Schedule an Intro Call',
-    philosophy: 'Philosophy:',
-    age: 'Age Range:',
-    approach: 'Approach:',
-    beginner: 'Beginner',
-    intermediate: 'Intermediate',
-    advanced: 'Advanced',
-    studentVideo: 'Student performance videos coming soon!',
-    testimonial: '“Ms. [Name] makes piano so fun! I never thought I’d be able to play Bach!” — ',
-    student: '10-year-old student',
-    weeklyGoals: 'Weekly Goals:',
-    parentalSupport: 'Parental Support:',
-    tips: 'Tips:'
+    cta: 'Ready to Start?',
+    schedule: 'Schedule a Trial Lesson'
   },
-  zh: {
+  tw: {
     why: '為什麼學鋼琴？',
     curriculum: '每個階段的學習重點',
     recitals: '鋼琴發表會',
-    practice: '在家練習支援',
     faq: '常見問題',
     testimonials: '學生感言',
     cta: '準備好開始了嗎？',
-    schedule: '預約體驗課',
-    philosophy: '教學理念：',
-    age: '年齡範圍：',
-    approach: '教學方式：',
-    beginner: '初學',
-    intermediate: '中級',
-    advanced: '高級',
-    studentVideo: '學生演奏影片即將上線！',
-    testimonial: '「老師讓鋼琴變得好有趣！沒想到我也能彈巴哈！」— ',
-    student: '10歲學生',
-    weeklyGoals: '每週目標：',
-    parentalSupport: '家長協助：',
-    tips: '小撇步：'
-  }
-};
-
-const curriculum = {
-  en: {
-    beginner: [
-      'Learning note names',
-      'Posture & hand position',
-      'Rhythm games'
-    ],
-    intermediate: [
-      'Repertoire building',
-      'Technique (Hanon, Czerny)',
-      'Sight reading'
-    ],
-    advanced: [
-      'Sonatas',
-      'Chopin Nocturnes',
-      'Expressive interpretation',
-      'Collaborative pieces'
-    ]
-  },
-  zh: {
-    beginner: [
-      '認識音名',
-      '正確姿勢與手型',
-      '節奏遊戲'
-    ],
-    intermediate: [
-      '曲目累積',
-      '技巧訓練（哈農、徹爾尼）',
-      '視奏練習'
-    ],
-    advanced: [
-      '奏鳴曲',
-      '蕭邦夜曲',
-      '表現力詮釋',
-      '合奏曲目'
-    ]
+    schedule: '預約體驗課'
   }
 };
 
@@ -286,9 +253,14 @@ const repertoire = {
 
 const recitals = {
   en: [
-    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov \“Prelude Op. 23 No.5\”</i></div>' },
-    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>Chopin \"Nocturne Op. 9 No. 2\"</i></div>' },
-    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima \"River Flows in You\"</i></div>' },
+    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov "Prelude Op. 23 No.5"</i></div>' },
+    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
+    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
+  ],
+  tw: [
+    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov "Prelude Op. 23 No.5"</i></div>' },
+    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
+    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
   ],
   zh: [
     { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>拉赫曼尼諾夫 "Op. 23 No. 5 前奏曲"</i></div>' },
@@ -334,19 +306,23 @@ function WhyLearnPianoAccordion() {
 
 const Piano = () => {
   const { language } = useLanguage();
+  // Map zh to tw since we're using /tw in the URL
+  const langKey = language === 'zh' ? 'tw' : language;
+
+  const t = text[langKey];
   return (
     <>
       <div className="piano-banner-bg"></div>
       <div className="piano-page">
         {/* 1. Overview of Piano Program */}
         <section className="piano-section piano-overview">
-          <h1>{headings[language].why}</h1>
-          <WhyLearnPianoAccordion />
+          <h1>{t.title}</h1>
+          <p>{t.content}</p>
         </section>
 
         {/* 2. Curriculum & Levels */}
         <section className="piano-section piano-curriculum">
-          <h2>{headings[language].curriculum}</h2>
+          <h2>{headings[langKey].curriculum}</h2>
           <div className="piano-curriculum-table-wrapper">
             <table className="piano-curriculum-table">
               <thead>
@@ -436,9 +412,9 @@ const Piano = () => {
 
         {/* Piano Recitals Section */}
         <section className="piano-section piano-recitals">
-          <h2>{language === 'en' ? 'Student Highlights' : '學生亮點'}</h2>
+          <h2>{headings[langKey].recitals}</h2>
           <div className="recital-videos">
-            {recitals[language].map((item, idx) => (
+            {recitals[langKey].map((item, idx) => (
               <div className="recital-video-thumb" key={idx}>
                 <video width="320" height="240" controls>
                   <source src={item.video} type="video/mp4" />
@@ -454,13 +430,13 @@ const Piano = () => {
 
         {/* 5. Piano Lesson FAQs */}
         <section className="piano-section piano-faq">
-          <h2>{headings[language].faq}</h2>
+          <h2>{headings[langKey].faq}</h2>
           <FAQAccordion />
         </section>
 
         {/* 6. Student Testimonials */}
         <section className="piano-section piano-testimonials">
-          <h2>{headings[language].testimonials}</h2>
+          <h2>{headings[langKey].testimonials}</h2>
           {language === 'en' ? (
             <>
               <blockquote>
@@ -496,7 +472,7 @@ const Piano = () => {
 
         {/* 7. Call to Action */}
         <section className="piano-section piano-cta">
-          <h2>{headings[language].cta}</h2>
+          <h2>{headings[langKey].cta}</h2>
           <a href="https://calendly.com/lavinialeemusicstudio/piano-intro-call" className="piano-cta-button" target="_blank" rel="noopener noreferrer">{headings[language].schedule}</a>
         </section>
       </div>
