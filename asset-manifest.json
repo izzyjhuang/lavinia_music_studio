@@ -1,14 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.2872932d.css",
-    "main.js": "./static/js/main.921c91c3.js",
+    "main.js": "./static/js/main.1bf199bc.js",
     "static/js/488.9475e51e.chunk.js": "./static/js/488.9475e51e.chunk.js",
-    "static/media/aidan_keelin_czardas.mp4": "./static/media/aidan_keelin_czardas.7edb6da348d0ed767270.mp4",
-    "static/media/nathan_havanaise.mp4": "./static/media/nathan_havanaise.9a1b0586391609b4bcbe.mp4",
-    "static/media/logan_scottish_fantasy.mp4": "./static/media/logan_scottish_fantasy.edb9a13f0dd2a1a75667.mp4",
-    "static/media/avril_chopin_nocturne.mp4": "./static/media/avril_chopin_nocturne.b261fd808e279e2b2018.mp4",
-    "static/media/daryl_rachmaninov_prelude_no.5.mp4": "./static/media/daryl_rachmaninov_prelude_no.5.60274e4437104dd0fa39.mp4",
-    "static/media/luke_river_flows_in_you.mp4": "./static/media/luke_river_flows_in_you.3d5c83bc9606df0ced8f.mp4",
     "static/media/playing-piano.jpeg": "./static/media/playing-piano.12cb19761dfbf15162a5.jpeg",
     "static/media/playing-piano-home.jpeg": "./static/media/playing-piano-home.2932c674e444301224e1.jpeg",
     "static/media/home-banner.jpeg": "./static/media/home-banner.251cd908facbc07202fa.jpeg",
@@ -20,11 +14,11 @@
     "static/media/logo.svg": "./static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "./index.html",
     "main.2872932d.css.map": "./static/css/main.2872932d.css.map",
-    "main.921c91c3.js.map": "./static/js/main.921c91c3.js.map",
+    "main.1bf199bc.js.map": "./static/js/main.1bf199bc.js.map",
     "488.9475e51e.chunk.js.map": "./static/js/488.9475e51e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2872932d.css",
-    "static/js/main.921c91c3.js"
+    "static/js/main.1bf199bc.js"
   ]
 }
