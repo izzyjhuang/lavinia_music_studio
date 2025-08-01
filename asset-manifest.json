@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.2872932d.css",
-    "main.js": "./static/js/main.55bddf11.js",
+    "main.js": "./static/js/main.33344b50.js",
     "static/js/488.9475e51e.chunk.js": "./static/js/488.9475e51e.chunk.js",
     "static/media/playing-piano.jpeg": "./static/media/playing-piano.12cb19761dfbf15162a5.jpeg",
     "static/media/playing-piano-home.jpeg": "./static/media/playing-piano-home.2932c674e444301224e1.jpeg",
@@ -14,11 +14,11 @@
     "static/media/logo.svg": "./static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "./index.html",
     "main.2872932d.css.map": "./static/css/main.2872932d.css.map",
-    "main.55bddf11.js.map": "./static/js/main.55bddf11.js.map",
+    "main.33344b50.js.map": "./static/js/main.33344b50.js.map",
     "488.9475e51e.chunk.js.map": "./static/js/488.9475e51e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2872932d.css",
-    "static/js/main.55bddf11.js"
+    "static/js/main.33344b50.js"
   ]
 }
