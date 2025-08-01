@@ -427,7 +427,7 @@ const ViolinViola = () => {
           <div className="recital-videos">
             {recitals[language].map((item, idx) => (
               <div className="recital-video-thumb" key={idx}>
-                <video width="320" height="240" controls>
+                <video controls style={{ width: '100%', maxHeight: '420px' }}>
                   <source src={item.video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
