@@ -95,8 +95,7 @@ node_modules/
 node_modules/.cache/
 
 # Video files
-src/videos/
-*.mp4
+
 
 # Large TypeScript files
 typescript/
