@@ -149,14 +149,14 @@ const curriculumTableRows = {
 
 const recitals = {
   en: [
-    { video: require('../videos/aidan_keelin_czardas.mp4'), label: '<div style="text-align: center;">Aidan & Keelin<br/><i>Monti "Czardas"</i></div>' },
-    { video: require('../videos/nathan_havanaise.mp4'), label: '<div style="text-align: center;">Nathan<br/><i>Saint-Saëns \"Havanaise\"</i></div>' },
-    { video: require('../videos/logan_scottish_fantasy.mp4'), label: '<div style="text-align: center;">Logan<br/><i>Bruch \"Scottish Fantasy\"</i></div>' },
+    { video: '/videos/aidan_keelin_czardas.mp4', label: '<div style="text-align: center;">Aidan & Keelin<br/><i>Monti "Czardas"</i></div>' },
+    { video: '/videos/nathan_havanaise.mp4', label: '<div style="text-align: center;">Nathan<br/><i>Saint-Saëns "Havanaise"</i></div>' },
+    { video: '/videos/logan_scottish_fantasy.mp4', label: '<div style="text-align: center;">Logan<br/><i>Bruch "Scottish Fantasy"</i></div>' },
   ],
   tw: [
-    { video: require('../videos/aidan_keelin_czardas.mp4'), label: '<div style="text-align: center;">Aidan 和 Keelin<br/><i>蒙蒂 "Czardas"</i></div>' },
-    { video: require('../videos/nathan_havanaise.mp4'), label: '<div style="text-align: center;">Nathan<br/><i>聖桑 "哈瓦奈斯"</i></div>' },
-    { video: require('../videos/logan_scottish_fantasy.mp4'), label: '<div style="text-align: center;">Logan<br/><i>布魯赫 "蘇格蘭幻想曲"</i></div>' },
+    { video: '/videos/aidan_keelin_czardas.mp4', label: '<div style="text-align: center;">Aidan 和 Keelin<br/><i>蒙蒂 "Czardas"</i></div>' },
+    { video: '/videos/nathan_havanaise.mp4', label: '<div style="text-align: center;">Nathan<br/><i>聖桑 "哈瓦奈斯"</i></div>' },
+    { video: '/videos/logan_scottish_fantasy.mp4', label: '<div style="text-align: center;">Logan<br/><i>布魯赫 "蘇格蘭幻想曲"</i></div>' },
   ]
 };
 

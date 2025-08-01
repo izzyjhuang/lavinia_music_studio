@@ -221,14 +221,14 @@ const repertoire = {
 
 const recitals = {
   en: [
-    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov "Prelude Op. 23 No.5"</i></div>' },
-    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
-    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
+    { video: '/videos/daryl_rachmaninov_prelude_no.5.mp4', label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov "Prelude Op. 23 No.5"</i></div>' },
+    { video: '/videos/avril_chopin_nocturne.mp4', label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
+    { video: '/videos/luke_river_flows_in_you.mp4', label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
   ],
   tw: [
-    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>拉赫曼尼諾夫 "Op. 23 No. 5 前奏曲"</i></div>' },
-    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>蕭邦 "夜曲 第9號第2首"</i></div>' },
-    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>李佑任 "River Flows in You"</i></div>' },
+    { video: '/videos/daryl_rachmaninov_prelude_no.5.mp4', label: '<div style="text-align: center;">Daryl<br/><i>拉赫曼尼諾夫 "Op. 23 No. 5 前奏曲"</i></div>' },
+    { video: '/videos/avril_chopin_nocturne.mp4', label: '<div style="text-align: center;">Avril<br/><i>蕭邦 "夜曲 第9號第2首"</i></div>' },
+    { video: '/videos/luke_river_flows_in_you.mp4', label: '<div style="text-align: center;">Luke<br/><i>李俞任 "River Flows in You"</i></div>' },
   ]
 };
 
