@@ -28,46 +28,46 @@ const headings = {
 const whyLearnPoints = {
   en: [
     {
-      title: 'Build a Strong Musical Foundation',
-      desc: 'Violin and viola lessons create a solid base for any musical journey. Students learn to read both treble and bass clef, developing a complete understanding of musical notation.'
+      title: 'Develops Fine Motor Skills and Coordination',
+      desc: 'Mastering the bow, posture, and finger placement hones a student’s precision and control. These skills strengthen mind focus and finger dexterity.'
     },
     {
-      title: 'Enhance Brain Development',
-      desc: 'Playing violin/viola engages both hemispheres of the brain, improving memory, spatial reasoning, and problem-solving skills. Studies show violin/viola students perform better in math and reading.'
+      title: 'Trains the Ear and Builds Musical Sensitivity',
+      desc: 'Unlike instruments with fixed pitches, strings demand close listening. Students develop an exceptional ear for pitch, tone, and musical nuance.'
     },
     {
-      title: 'Cultivate Creativity',
-      desc: 'Violin/viola lessons encourage improvisation and composition, helping students express themselves through music. They learn to create their own melodies and harmonies.'
+      title: 'Offers Rich Ensemble Opportunities',
+      desc: 'From string quartets to full symphony orchestras, violinists and violists enjoy vibrant opportunities to collaborate, connect, and create music together — learning teamwork, timing, and leadership.'
     },
     {
-      title: 'Develop Discipline and Patience',
-      desc: 'Learning violin/viola requires consistent practice and dedication. Students develop time management skills and learn the value of perseverance.'
+      title: 'Teaches Discipline and Patience',
+      desc: 'Learning violin or viola is a journey of steady progress. As students meet each challenge, they build perseverance, confidence, and a deep appreciation for their own growth.'
     },
     {
-      title: 'Build Confidence',
-      desc: 'Regular performances and recitals help students overcome stage fright and build self-assurance. They learn to present themselves confidently in any situation.'
+      title: 'A Voice for Personal Expression',
+      desc: 'A wide range of violin repertoire help students learn to cultivate their creativities through expressing music on the violin.'
     }
   ],
   tw: [
     {
-      title: '建立堅實的音樂基礎',
-      desc: '小提琴/中提琴課程為音樂學習打下堅實基礎。學生會學習高音譜號和低音譜號，全面理解音樂記譜法。'
+      title: '培養精細動作與協調性',
+      desc: '掌握弓法、姿勢和指法，培養學生的精確度和控制力。這些技能能增強專注力和手指靈活性。'
     },
     {
-      title: '促進腦部發展',
-      desc: '彈琴能同時活躍大腦左右半球，提升記憶力、空間推理和解決問題的能力。研究顯示，學琴的孩子在數學和閱讀方面表現更佳。'
+      title: '培養音樂聽覺與敏感度',
+      desc: '與固定音高的樂器不同，弦樂器需要精細的聽音。學生能培養出卓越的音準、音色和音樂細節感。'
     },
     {
-      title: '培養創意',
-      desc: '小提琴/中提琴課程鼓勵即興演奏和創作，幫助學生通過音樂表達自我。他們會學習創作自己的旋律和和弦。'
+      title: '豐富的合奏機會',
+      desc: '從弦樂四重奏到完整交響樂團，小提琴手和中提琴手享有豐富的合作、交流和共同創作音樂的機會——學習團隊合作、節奏感和領導力。'
     },
     {
-      title: '培養耐心與自律',
-      desc: '學琴需要持續練習和投入。學生會學會時間管理，並體會毅力的價值。'
+      title: '培養紀律與耐心',
+      desc: '學習小提琴或中提琴是一段穩步前進的旅程。隨著學生克服每個挑戰，他們會建立毅力、自信和對自身成長的深刻認知。'
     },
     {
-      title: '建立自信',
-      desc: '定期表演和音樂會幫助學生克服舞台恐懼，建立自信心。他們會學會在任何場合自信地表現自己。'
+      title: '個人表達的聲音',
+      desc: '豐富的小提琴曲目幫助學生通過演奏小提琴來培養他們的創造力。'
     }
   ]
 };

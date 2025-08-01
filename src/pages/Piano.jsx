@@ -141,78 +141,46 @@ function FAQAccordion() {
 const whyLearnPianoPoints = {
   en: [
     {
-      title: 'Build a Strong Musical Foundation',
-      desc: 'From reading music to understanding rhythm, piano lessons create a solid base for any musical journey. Students learn to read both treble and bass clef, developing a complete understanding of musical notation.'
+      title: 'Builds a Strong Foundation in Musical Understanding',
+      desc: 'Piano builds a strong foundation in musical understanding, helping to develop strong listening skills and a keen sense of pitch and rhythm.'
     },
     {
-      title: 'Enhance Brain Development',
-      desc: 'Playing piano engages both hemispheres of the brain, improving memory, spatial reasoning, and problem-solving skills. Studies show piano students perform better in math and reading.'
+      title: 'Intuitive Visual Layout of Music Theory',
+      desc: 'Piano visually lays out music theory in an intuitive way. This makes it an excellent starting point in musical education.'
     },
     {
-      title: 'Cultivate Creativity',
-      desc: 'Piano lessons encourage improvisation and composition, helping students express themselves through music. They learn to create their own melodies and harmonies.'
+      title: 'Enhances Brain Function and Coordination',
+      desc: 'Playing the piano improves memory, enhances coordination, and the music patterns promote logical thinking.'
     },
     {
-      title: 'Develop Discipline and Patience',
-      desc: 'Learning piano requires consistent practice and dedication. Students develop time management skills and learn the value of perseverance.'
+      title: 'Explores a Wide Range of Repertoire',
+      desc: 'A wide range of Piano repertoire lets students learn to express their creativity through music.'
     },
     {
-      title: 'Build Confidence',
-      desc: 'Regular performances and recitals help students overcome stage fright and build self-assurance. They learn to present themselves confidently in any situation.'
-    },
-    {
-      title: 'Understand Music Visually and Intuitively',
-      desc: 'The keyboard layout makes music theory come alive, making piano an ideal first instrument for any aspiring musician.'
-    },
-    {
-      title: 'Boost Brainpower and Coordination',
-      desc: 'Piano playing strengthens memory, sharpens focus, and enhances hand-eye coordination while encouraging logical thinking through musical patterns.'
-    },
-    {
-      title: 'Unleash Creativity Through Repertoire',
-      desc: 'From classical to contemporary, the wide variety of piano music invites students to explore and express their unique musical voice.'
-    },
-    {
-      title: 'Grow Confidence Through Achievement',
-      desc: 'Whether it\'s mastering a new skill or performing at a recital, each milestone helps students develop confidence and a sense of accomplishment.'
+      title: 'Builds Confidence Through Achievement',
+      desc: 'Learning a piece, performing at a recital, or mastering a new skill helps students build confidence through achievement.'
     }
   ],
   tw: [
     {
-      title: '建立堅實的音樂基礎',
-      desc: '從讀譜到理解節奏，鋼琴課為任何音樂之旅奠定堅實的基礎。學生學習閱讀高音譜號和低音譜號，建立完整的音樂符號理解能力。'
+      title: '建立堅實的音樂理解基礎',
+      desc: '鋼琴建立堅實的音樂理解基礎，培養良好的聆聽技巧和音準節奏感。'
     },
     {
-      title: '提升腦力發展',
-      desc: '彈鋼琴能同時活躍大腦左右半球，提升記憶力、空間推理和解決問題的能力。研究顯示，學習鋼琴的學生數學和閱讀能力更優秀。'
-    },
-    {
-      title: '培養創意',
-      desc: '鋼琴課鼓勵即興演奏和作曲，幫助學生通過音樂表達自我。他們學習創作自己的旋律和和聲。'
-    },
-    {
-      title: '培養紀律和耐心',
-      desc: '學習鋼琴需要持之以恆的練習和專注。學生發展時間管理能力，學習毅力的價值。'
-    },
-    {
-      title: '建立自信',
-      desc: '定期表演和發表會幫助學生克服舞台緊張，建立自信心。他們學習在各種場合自信地呈現自己。'
-    },
-    {
-      title: '直觀理解音樂',
-      desc: '琴鍵布局讓音樂理論活起來，使鋼琴成為任何有志於音樂者理想的首選樂器。'
+      title: '直觀的音樂理論視覺呈現',
+      desc: '鋼琴以直觀的方式呈現音樂理論，使其成為音樂教育的理想起點。'
     },
     {
       title: '增強腦力與協調性',
-      desc: '彈鋼琴能強化記憶力、專注力，提升手眼協調能力，同時通過音樂模式培養邏輯思維。'
+      desc: '彈琴能改善記憶力、增強協調性，音樂模式有助於培養邏輯思維。'
     },
     {
-      title: '通過曲目釋放創意',
-      desc: '從古典到現代，豐富的鋼琴曲目邀請學生探索並表達他們獨特的音樂聲音。'
+      title: '豐富的曲目選擇',
+      desc: '豐富的鋼琴曲目讓學生能通過音樂表達創造力。'
     },
     {
       title: '通過成就建立自信',
-      desc: '無論是掌握新技能還是發表會表演，每個里程碑都幫助學生建立自信和成就感。'
+      desc: '學習曲目、發表會表演或掌握新技能，都能幫助學生通過成就建立自信。'
     }
   ]
 };
@@ -258,11 +226,6 @@ const recitals = {
     { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
   ],
   tw: [
-    { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninov "Prelude Op. 23 No.5"</i></div>' },
-    { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
-    { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
-  ],
-  zh: [
     { video: require('../videos/daryl_rachmaninov_prelude_no.5.mp4'), label: '<div style="text-align: center;">Daryl<br/><i>拉赫曼尼諾夫 "Op. 23 No. 5 前奏曲"</i></div>' },
     { video: require('../videos/avril_chopin_nocturne.mp4'), label: '<div style="text-align: center;">Avril<br/><i>蕭邦 "夜曲 第9號第2首"</i></div>' },
     { video: require('../videos/luke_river_flows_in_you.mp4'), label: '<div style="text-align: center;">Luke<br/><i>李佑任 "River Flows in You"</i></div>' },
@@ -287,9 +250,10 @@ function WhyLearnPianoAccordion() {
   const { language } = useLanguage();
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = idx => setOpenIndex(openIndex === idx ? null : idx);
+  const langKey = language === 'zh' ? 'tw' : language;
   return (
     <div className="why-learn-piano-accordion">
-      {whyLearnPianoPoints[language].map((item, idx) => (
+      {whyLearnPianoPoints[langKey].map((item, idx) => (
         <div key={idx} className={`why-learn-piano-item${openIndex === idx ? ' open' : ''}`}>
           <button className="why-learn-piano-title-btn" onClick={() => toggle(idx)} aria-expanded={openIndex === idx}>
             <span className="why-learn-piano-title">{item.title}</span>
@@ -309,15 +273,16 @@ const Piano = () => {
   // Map zh to tw since we're using /tw in the URL
   const langKey = language === 'zh' ? 'tw' : language;
 
-  const t = text[langKey];
+  const t = whyLearnPianoPoints[langKey];
   return (
     <>
       <div className="piano-banner-bg"></div>
       <div className="piano-page">
         {/* 1. Overview of Piano Program */}
         <section className="piano-section piano-overview">
-          <h1>{t.title}</h1>
-          <p>{t.content}</p>
+          <h1>{headings[langKey].why}</h1>
+          {/* <p>{t.content}</p> */}
+          <WhyLearnPianoAccordion />
         </section>
 
         {/* 2. Curriculum & Levels */}
