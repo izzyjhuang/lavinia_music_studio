@@ -2,18 +2,143 @@
 .violinviola-page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 1rem;
   background: #f7f6fa;
   border-radius: 22px;
   box-shadow: 0 8px 32px rgba(60,40,120,0.08);
 }
 
 .violinviola-section {
-  margin-bottom: 2.7rem;
+  margin-bottom: 2rem;
   background: #fff;
   border-radius: 16px;
-  padding: 1.5rem 1.5rem;
+  padding: 1.25rem;
   box-shadow: 0 4px 18px rgba(60,40,120,0.06);
+}
+
+/* Mobile first approach */
+@media (max-width: 575px) {
+  .violinviola-page {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .violinviola-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .violinviola-section h1, .violinviola-section h2 {
+    font-size: 1.15rem;
+  }
+  
+  .violinviola-curriculum-blocks {
+    gap: 1.5rem;
+  }
+  
+  .violinviola-curriculum-level {
+    min-width: 150px;
+    padding: 1rem;
+  }
+  
+  .violinviola-repertoire-levels {
+    gap: 1.5rem;
+  }
+  
+  .violinviola-repertoire-levels > div {
+    min-width: 130px;
+    padding: 1rem;
+  }
+  
+  .violinviola-cta-button {
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+  }
+  
+  .violinviola-testimonials blockquote {
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+  }
+  
+  .violinviola-recitals .recital-videos {
+    gap: 0.3rem;
+  }
+  
+  .recital-video-thumb {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .recital-video-thumb video {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .violinviola-page {
+    padding: 2rem 1rem;
+  }
+  
+  .violinviola-section {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .violinviola-curriculum-level {
+    min-width: 160px;
+    padding: 1.1rem;
+  }
+  
+  .violinviola-repertoire-levels > div {
+    min-width: 140px;
+    padding: 1.1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .violinviola-page {
+    padding: 2.25rem 1.25rem;
+  }
+  
+  .violinviola-section {
+    padding: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+  
+  .violinviola-curriculum-level {
+    min-width: 180px;
+    padding: 1.2rem;
+  }
+  
+  .violinviola-repertoire-levels > div {
+    min-width: 150px;
+    padding: 1.2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .violinviola-page {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .violinviola-section {
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 2.7rem;
+  }
+  
+  .violinviola-curriculum-level {
+    min-width: 200px;
+    padding: 1.2rem;
+  }
+  
+  .violinviola-repertoire-levels > div {
+    min-width: 180px;
+    padding: 1.2rem;
+  }
 }
 
 .violinviola-section h1, .violinviola-section h2 {
