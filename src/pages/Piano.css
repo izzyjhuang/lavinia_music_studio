@@ -324,31 +324,184 @@
 .piano-curriculum-table tr:last-child th {
   border-bottom: none;
 }
-@media (max-width: 700px) {
+
+/* Mobile Responsive Styles */
+@media (max-width: 1200px) {
+  .piano-page {
+    padding: 2rem 1rem;
+  }
+  
+  .piano-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .piano-section h1, .piano-section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .piano-section {
+    padding: 1.3rem 0.8rem;
+  }
+  
+  .piano-section h1, .piano-section h2 {
+    font-size: 1.15rem;
+  }
+  
+  .piano-section ul {
+    padding-left: 1em;
+  }
+  
+  .progression-step {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .faq-question {
+    font-size: 1rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .why-learn-piano-title {
+    font-size: 1.05rem;
+  }
+  
+  .why-learn-piano-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .piano-cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .piano-page {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .piano-section {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .piano-section h1, .piano-section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .piano-section ul {
+    padding-left: 0.8em;
+  }
+  
+  .piano-curriculum-blocks,
+  .piano-repertoire-levels {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .piano-curriculum-level,
+  .piano-repertoire-levels > div {
+    min-width: 100%;
+    padding: 1rem;
+  }
+  
+  .progression-step {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .progression-arrow {
+    font-size: 1.4rem;
+  }
+  
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 1rem 0.6rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+  }
+  
+  .why-learn-piano-title {
+    font-size: 1rem;
+  }
+  
+  .why-learn-piano-desc {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem 0.8rem 2rem;
+  }
+  
+  .piano-cta-button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
   .piano-curriculum-table th,
   .piano-curriculum-table td {
-    padding: 0.7rem 0.5rem;
-    font-size: 0.98rem;
+    padding: 0.8rem 0.6rem;
+    font-size: 0.95rem;
   }
+  
   .piano-curriculum-table thead th {
     font-size: 1rem;
   }
 }
-@media (max-width: 800px) {
-  .piano-curriculum-blocks,
-  .piano-repertoire-levels {
-    flex-direction: column;
-    gap: 1.2rem;
+
+@media (max-width: 576px) {
+  .piano-page {
+    padding: 1.2rem 0.5rem;
   }
+  
   .piano-section {
-    padding: 1.3rem 0.7rem;
+    padding: 1rem 0.5rem;
   }
-  .recital-videos {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
+  
+  .piano-section h1, .piano-section h2 {
+    font-size: 1rem;
   }
-} 
+  
+  .faq-question {
+    font-size: 0.9rem;
+    padding: 0.9rem 0.5rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+  }
+  
+  .why-learn-piano-title {
+    font-size: 0.95rem;
+  }
+  
+  .why-learn-piano-desc {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem 0.7rem 1.5rem;
+  }
+  
+  .piano-cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .piano-curriculum-table th,
+  .piano-curriculum-table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .piano-curriculum-table thead th {
+    font-size: 0.95rem;
+  }
+}
 
 .why-learn-piano-list {
   margin: 1.5rem 0 0 0;
