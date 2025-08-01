@@ -21,7 +21,7 @@ const headings = {
     faq: '常見問題',
     testimonials: '學生感言',
     cta: '準備好開始了嗎？',
-    schedule: '預約體驗課',
+    schedule: '預約初步洽談',
   }
 };
 
@@ -348,15 +348,15 @@ const testimonials = {
   en: [
     {
       text: 'Lavinia helped me prepare for my first orchestra audition. I started viola with her in 2022, and now I can play pieces I never thought I could. She always encourages me to do my best!',
-      student: '— Alex (12 years old), learning since 2022'
+      student: '— Alex (12yo), learning since 2022'
     },
     {
       text: 'I used to have trouble with intonation, but Lavinia taught me how to practice effectively. After three years of lessons, I\'m more confident and even soloed at the school concert!',
-      student: '— Mia (12 years old), learning since 2022'
+      student: '— Mia (12yo), learning since 2022'
     },
     {
       text: 'Lavinia makes violin so much fun! I love learning new songs and playing with my classmates. She always finds music I enjoy.',
-      student: '— Ethan (10 years old), learning since 2023'
+      student: '— Ethan (10yo), learning since 2023'
     }
   ],
   tw: [
@@ -457,7 +457,7 @@ const ViolinViola = () => {
         {/* 6. Call to Action */}
         <section className="violinviola-section violinviola-cta">
           <h2>{h.cta}</h2>
-          <a href="https://calendly.com/lavinialeemusicstudio/" className="schedule-button" target="_blank" rel="noopener noreferrer">{h.schedule}</a>
+          <a href="https://calendly.com/lavinialeemusicstudio/" className="violinviola-cta-button" target="_blank" rel="noopener noreferrer">{h.schedule}</a>
         </section>
       </div>
     </>

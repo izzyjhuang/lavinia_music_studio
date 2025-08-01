@@ -192,8 +192,8 @@ const headings = {
     recitals: 'Piano Recitals',
     faq: 'Frequently Asked Questions',
     testimonials: 'Student Testimonials',
-    cta: 'Ready to Start?',
-    schedule: 'Schedule a Trial Lesson'
+    cta: 'Ready to Begin?',
+    schedule: 'Schedule an Intro Call'
   },
   tw: {
     why: '為什麼學鋼琴？',
@@ -202,7 +202,7 @@ const headings = {
     faq: '常見問題',
     testimonials: '學生感言',
     cta: '準備好開始了嗎？',
-    schedule: '預約體驗課'
+    schedule: '預約初步洽談'
   }
 };
 
