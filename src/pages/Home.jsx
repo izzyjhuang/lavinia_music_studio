@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -95,4 +96,13 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default function HomeWithFooter(props) {
+  return <>
+    <Home {...props} />
+    <Footer />
+  </>;
+}
+
+// Original default export
+// export default Home;
+ 

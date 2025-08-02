@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 import playingPianoImg from '../images/playing-piano.jpeg';
@@ -445,4 +446,13 @@ const Piano = () => {
   );
 };
 
-export default Piano; 
+export default function PianoWithFooter(props) {
+  return <>
+    <Piano {...props} />
+    <Footer />
+  </>;
+}
+
+// Original default export
+// export default Piano;
+ 

@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 import '../images/playing-piano.jpeg';
@@ -464,4 +465,13 @@ const ViolinViola = () => {
   );
 };
 
-export default ViolinViola; 
+export default function ViolinViolaWithFooter(props) {
+  return <>
+    <ViolinViola {...props} />
+    <Footer />
+  </>;
+}
+
+// Original default export
+// export default ViolinViola;
+ 

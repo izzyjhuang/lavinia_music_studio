@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 
@@ -67,4 +68,13 @@ const CurrentStudents = () => {
   );
 };
 
-export default CurrentStudents; 
+export default function CurrentStudentsWithFooter(props) {
+  return <>
+    <CurrentStudents {...props} />
+    <Footer />
+  </>;
+}
+
+// Original default export
+// export default CurrentStudents;
+ 

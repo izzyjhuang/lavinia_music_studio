@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import React from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 import './Contact.css';
@@ -59,4 +60,13 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default function ContactWithFooter(props) {
+  return <>
+    <Contact {...props} />
+    <Footer />
+  </>;
+}
+
+// Original default export
+// export default Contact;
+ 

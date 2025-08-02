@@ -47,7 +47,7 @@
 }
 
 .home-instrument-card {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 300px;
   max-width: 400px;
   background: #fff;
@@ -56,6 +56,7 @@
   transition: transform 0.3s ease;
   overflow: hidden;
   height: 100%;
+
 }
 
 .home-instrument-card:hover {
@@ -82,11 +83,13 @@
 .home-instrument-content h3 {
   color: #333;
   margin-bottom: 0.5rem;
+  padding: 1.2rem 1.2rem 0.5rem 1.2rem;
 }
 
 .home-instrument-content p {
   color: #666;
   line-height: 1.6;
+  padding: 0 1.2rem 1.2rem 1.2rem;
 }
 
 /* Mobile first approach */
@@ -108,10 +111,13 @@
   }
   
   .home-instrument-card {
+    flex: 1 1 0;
     width: 100%;
     margin: 1rem 0;
     min-width: 250px;
     max-width: 350px;
+    padding: 1rem;
+    box-sizing: border-box;
   }
   
   .home-instrument-img {
@@ -140,10 +146,13 @@
   }
   
   .home-instrument-card {
+    flex: 1 1 0;
     width: 100%;
     margin: 1.2rem 0;
     min-width: 280px;
     max-width: 380px;
+    padding: 1rem;
+    box-sizing: border-box;
   }
   
   .home-instrument-img {
@@ -172,10 +181,13 @@
   }
   
   .home-instrument-card {
-    width: 300px;
+    flex: 1 1 0;
+    width: 100%;
     margin: 0.8rem;
     min-width: 300px;
     max-width: 400px;
+    padding: 1rem;
+    box-sizing: border-box;
   }
   
   .home-instrument-img {
@@ -204,10 +216,13 @@
   }
   
   .home-instrument-card {
-    width: 350px;
+    flex: 1 1 0;
+    width: 100%;
     margin: 1rem;
     min-width: 350px;
     max-width: 450px;
+    padding: 1rem;
+    box-sizing: border-box;
   }
   
   .home-instrument-img {

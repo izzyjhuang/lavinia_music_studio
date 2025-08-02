@@ -1,0 +1,18 @@
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background: #f3f3f3;
+  color: #333;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.04);
+  margin-top: 2rem;
+}
+
+.site-footer div {
+  margin: 0.2rem 0;
+}
