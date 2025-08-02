@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.df782eef.css",
-    "main.js": "./static/js/main.6d51043e.js",
-    "static/js/488.9475e51e.chunk.js": "./static/js/488.9475e51e.chunk.js",
+    "main.js": "./static/js/main.630b8603.js",
+    "static/js/488.858609b1.chunk.js": "./static/js/488.858609b1.chunk.js",
     "static/media/playing-piano.jpeg": "./static/media/playing-piano.12cb19761dfbf15162a5.jpeg",
     "static/media/playing-piano-home.jpeg": "./static/media/playing-piano-home.2932c674e444301224e1.jpeg",
     "static/media/home-banner.jpeg": "./static/media/home-banner.251cd908facbc07202fa.jpeg",
@@ -14,11 +14,11 @@
     "static/media/logo.svg": "./static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "./index.html",
     "main.df782eef.css.map": "./static/css/main.df782eef.css.map",
-    "main.6d51043e.js.map": "./static/js/main.6d51043e.js.map",
-    "488.9475e51e.chunk.js.map": "./static/js/488.9475e51e.chunk.js.map"
+    "main.630b8603.js.map": "./static/js/main.630b8603.js.map",
+    "488.858609b1.chunk.js.map": "./static/js/488.858609b1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.df782eef.css",
-    "static/js/main.6d51043e.js"
+    "static/js/main.630b8603.js"
   ]
 }
