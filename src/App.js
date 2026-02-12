@@ -11,7 +11,7 @@ import Contact from './pages/Contact';
 import LanguageWrapper from './components/LanguageWrapper';
 import logo from './logo.svg';
 import './App.css';
-
+ 
 function App() {
   return (
     <Router>
