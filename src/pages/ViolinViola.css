@@ -314,6 +314,14 @@
   display: block;
   margin-bottom: 0.7rem;
 }
+@media (min-width: 700px) {
+  .violinviola-recitals .recital-video-thumb {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 50%;
+    width: 100%;
+  }
+}
 @media (max-width: 900px) {
   .violinviola-recitals .recital-videos {
     flex-direction: column;
