@@ -297,6 +297,19 @@
   pointer-events: auto;
 }
 
+.home-hero-video-section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-hero-video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
 @media (max-width: 900px) {
   .home-banner-section {
     aspect-ratio: 1.5 / 1;
@@ -338,7 +351,7 @@
   background: #fff;
   border-radius: 22px;
   box-shadow: 0 8px 32px rgba(60,40,120,0.08);
-  margin-top: 15rem;
+  margin-top: 2rem;
 }
 
 .home-mission-pic {

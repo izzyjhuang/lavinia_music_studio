@@ -2,7 +2,6 @@ import Footer from '../components/Footer';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import bgImg from '../images/home-banner.jpeg';
 import teacherPic from '../images/teacher-pic.jpeg';
 import pianoImg from '../images/playing-piano.jpeg';
 import violinImg from '../images/playing-violin.jpeg';
@@ -50,22 +49,17 @@ const Home = () => {
   const langKey = language === 'zh' ? 'tw' : language;
   return (
     <>
-      <Link to="/" className="home-banner-link">
-        <section className="home-banner-section">
-          <img src={bgImg} alt="Banner" className="home-banner-bg" />
-          <div className="home-banner-overlay">
-            <video
-              className="home-banner-overlay-video"
-              src="https://res.cloudinary.com/dbav9uvia/video/upload/v1777321263/website_self_intro_video_tzqpxf.mov"
-              controls
-              playsInline
-              preload="metadata"
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-      </Link>
+      <section className="home-hero-video-section">
+        <video
+          className="home-hero-video"
+          src="https://res.cloudinary.com/dbav9uvia/video/upload/v1777321263/website_self_intro_video_tzqpxf.mov"
+          controls
+          playsInline
+          preload="metadata"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </section>
       <section className="home-mission-section">
         <div className="home-mission-pic">
           <img src={teacherPic} alt="Teacher" className="home-mission-img" />
