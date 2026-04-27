@@ -150,10 +150,12 @@ const curriculumTableRows = {
 
 const recitals = {
   en: [
+    { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1777321817/yedi_mendelssohn_zaveo7.mov', label: '<div style="text-align: center;">Yedi<br/><i>Mendelssohn "Violin Concerto"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067917/aidan_keelin_czardas_fwvuh2.mp4', label: '<div style="text-align: center;">Aidan & Keelin<br/><i>Monti "Czardas"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067929/logan_scottish_fantasy_dps4ov.mp4', label: '<div style="text-align: center;">Logan<br/><i>Bruch "Scottish Fantasy"</i></div>' },
   ],
   tw: [
+    { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1777321817/yedi_mendelssohn_zaveo7.mov', label: '<div style="text-align: center;">Yedi<br/><i>Mendelssohn "Violin Concerto"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067917/aidan_keelin_czardas_fwvuh2.mp4', label: '<div style="text-align: center;">Aidan 和 Keelin<br/><i>蒙蒂 "Czardas"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067929/logan_scottish_fantasy_dps4ov.mp4', label: '<div style="text-align: center;">Logan<br/><i>布魯赫 "蘇格蘭幻想曲"</i></div>' },
   ]

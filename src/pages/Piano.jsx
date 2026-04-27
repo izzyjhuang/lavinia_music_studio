@@ -222,10 +222,12 @@ const repertoire = {
 
 const recitals = {
   en: [
+    { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1777321175/daryl_rachmaninoff_n9ecvv.mp4', label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninoff "Prelude Op.23 No. 5"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067831/avril_chopin_nocturne_yfpvmn.mp4', label: '<div style="text-align: center;">Avril<br/><i>Chopin "Nocturne Op. 9 No. 2"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067835/luke_river_flows_in_you_po2uke.mp4', label: '<div style="text-align: center;">Luke<br/><i>Yurima "River Flows in You"</i></div>' }
   ],
   tw: [
+    { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1777321175/daryl_rachmaninoff_n9ecvv.mp4', label: '<div style="text-align: center;">Daryl<br/><i>Rachmaninoff "Prelude Op.23 No. 5"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067831/avril_chopin_nocturne_yfpvmn.mp4', label: '<div style="text-align: center;">Avril<br/><i>蕭邦 "夜曲 第9號第2首"</i></div>' },
     { video: 'https://res.cloudinary.com/dbav9uvia/video/upload/v1754067835/luke_river_flows_in_you_po2uke.mp4', label: '<div style="text-align: center;">Luke<br/><i>李俞任 "River Flows in You"</i></div>' },
   ]

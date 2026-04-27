@@ -285,11 +285,27 @@
   pointer-events: auto;
 }
 
+.home-banner-overlay-video {
+  width: 70%;
+  max-width: none;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(60,40,120,0.13);
+  background: #fff;
+  padding: 0;
+  border: 10px solid #fff;
+  pointer-events: auto;
+}
+
 @media (max-width: 900px) {
   .home-banner-section {
     aspect-ratio: 1.5 / 1;
   }
   .home-banner-overlay-img {
+    max-width: 70vw;
+    border-width: 4px;
+  }
+  .home-banner-overlay-video {
     max-width: 70vw;
     border-width: 4px;
   }
@@ -300,6 +316,11 @@
     aspect-ratio: 1 / 1.2;
   }
   .home-banner-overlay-img {
+    max-width: 95vw;
+    min-width: 80px;
+    border-width: 2px;
+  }
+  .home-banner-overlay-video {
     max-width: 95vw;
     min-width: 80px;
     border-width: 2px;

@@ -7,7 +7,7 @@ const competitionText = {
     heading: 'Student Achievements',
     competitions: [
       '<strong>Gold medals</strong> in Sonata and Sonatina Festivals',
-      '<strong>First place</strong> and <strong>overall winnergi</strong> at the Lake Forest High School Music Competition',
+      '<strong>First place</strong> and <strong>overall winner</strong> at the Lake Forest High School Music Competition',
       '<strong>First place</strong> at the Deerfield High School and Caruso Middle School Music Competitions',
       '<strong>Honorable Mention</strong> in the highly competitive Walgreens National Concerto Competition',
       '<strong>Section Violinist</strong> for the<strong> ILMEA District Orchestra</strong>, and even the role of <strong>Principal Violist</strong> in the<strong> ILMEA All-State Orchestra</strong>'
