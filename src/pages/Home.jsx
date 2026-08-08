@@ -24,7 +24,7 @@ const instrumentText = {
     },
     ready: {
       heading: 'Ready to Begin?',
-      buttonText: 'Schedule an Intro Call'
+      buttonText: 'Book a Free Trial Lesson'
     }
   },
   tw: {
@@ -38,7 +38,7 @@ const instrumentText = {
     },
     ready: {
       heading: '準備好開始了嗎？',
-      buttonText: '預約初步洽談'
+      buttonText: '預約免費體驗課'
     }
   }
 };

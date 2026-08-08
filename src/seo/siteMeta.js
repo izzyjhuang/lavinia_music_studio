@@ -88,14 +88,14 @@ export const META = {
   },
   '/contact': {
     en: {
-      title: 'Contact & Book an Intro Call — Northbrook, IL',
+      title: 'Free Trial Lesson — Piano & Violin, Northbrook IL',
       description:
-        'Schedule a free intro call for piano, violin, or viola lessons on Chicago\'s North Shore. Serving Northbrook, Glenview, Northfield, Winnetka, Wilmette, and Lake Forest.',
+        'Book a free trial lesson for piano, violin, or viola on Chicago\'s North Shore. Serving Northbrook, Glenview, Northfield, Winnetka, Wilmette, and Lake Forest.',
     },
     tw: {
-      title: '聯絡我們・預約初步洽談 | Northbrook 音樂教室',
+      title: '免費體驗課・鋼琴與小提琴 | Northbrook 音樂教室',
       description:
-        '預約免費初步洽談，了解芝加哥北岸的鋼琴、小提琴與中提琴課程。服務 Northbrook、Glenview、Northfield、Winnetka、Wilmette 與 Lake Forest。',
+        '預約免費體驗課，了解芝加哥北岸的鋼琴、小提琴與中提琴課程。服務 Northbrook、Glenview、Northfield、Winnetka、Wilmette 與 Lake Forest。',
     },
   },
 };
@@ -160,7 +160,7 @@ export function localBusinessSchema() {
     founder: { '@type': 'Person', name: 'Lavinia Lee', jobTitle: 'Music Instructor' },
     potentialAction: {
       '@type': 'ReserveAction',
-      name: 'Schedule an Intro Call',
+      name: 'Book a Free Trial Lesson',
       target: BOOKING_URL,
     },
     hasOfferCatalog: {

@@ -9,7 +9,7 @@ const text = {
     content: 'Get in touch for lesson inquiries, scheduling, or other questions.',
     ready: {
       heading: 'Ready to Begin?',
-      buttonText: 'Schedule an Intro Call'
+      buttonText: 'Book a Free Trial Lesson'
     },
     email: {
       heading: 'Email Us',
@@ -21,7 +21,7 @@ const text = {
     content: '如需課程諮詢、預約或其他問題，歡迎聯絡我們。',
     ready: {
       heading: '準備好開始了嗎？',
-      buttonText: '預約初步洽談'
+      buttonText: '預約免費體驗課'
     },
     email: {
       heading: '電子郵件',

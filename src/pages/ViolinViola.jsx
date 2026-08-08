@@ -13,7 +13,7 @@ const headings = {
     faq: 'Frequently Asked Questions',
     testimonials: 'Student Testimonials',
     cta: 'Ready to Begin?',
-    schedule: 'Schedule an Intro Call',
+    schedule: 'Book a Free Trial Lesson',
   },
   tw: {
     why: '為什麼學小提琴/中提琴？',
@@ -22,7 +22,7 @@ const headings = {
     faq: '常見問題',
     testimonials: '學生感言',
     cta: '準備好開始了嗎？',
-    schedule: '預約初步洽談',
+    schedule: '預約免費體驗課',
   }
 };
 
