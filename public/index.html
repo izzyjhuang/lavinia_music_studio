@@ -36,5 +36,14 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Cloudflare Web Analytics. Sits outside #root so it never takes part in
+         hydration. scripts/prerender.js blocks the beacon during builds so the
+         18 prerender page loads don't show up as real traffic. -->
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "684c6a4eb385495e9d3246652c8bd77a"}'
+    ></script>
   </body>
 </html>

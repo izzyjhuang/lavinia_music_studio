@@ -126,7 +126,10 @@ async function main() {
       const url = req.url();
       const heavy = type === 'media' || type === 'font';
       const thirdPartyImage = type === 'image' && !url.includes(`localhost:${PORT}`);
-      if (heavy || thirdPartyImage) return req.abort();
+      // Analytics must not record the build itself — every prerender pass would
+      // otherwise register 18 phantom visits.
+      const analytics = url.includes('cloudflareinsights.com');
+      if (heavy || thirdPartyImage || analytics) return req.abort();
       return req.continue();
     });
 
