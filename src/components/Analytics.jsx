@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-// Set REACT_APP_GA_ID in Netlify (Site configuration -> Environment variables)
-// and redeploy. With no value set this component does nothing at all, so the
-// site works identically with or without analytics configured.
-const GA_ID = process.env.REACT_APP_GA_ID;
+// GA4 Measurement IDs are public — they appear in the page source of every site
+// that uses GA — so this one lives in the repo. Set REACT_APP_GA_ID in Netlify
+// to point at a different property, or to an empty value to switch analytics off
+// entirely without a code change.
+const GA_ID =
+  process.env.REACT_APP_GA_ID === undefined ? 'G-671546WC2W' : process.env.REACT_APP_GA_ID;
 
 const Analytics = () => {
   const { pathname } = useLocation();
