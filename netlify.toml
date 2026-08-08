@@ -10,9 +10,11 @@
   # would otherwise fail the deploy; they're worth cleaning up, but they should
   # not be able to take the site down.
   CI = "false"
-
-[context.production.environment]
-  NODE_ENV = "production"
+  # puppeteer is a devDependency and the prerender step needs it. npm omits
+  # devDependencies when NODE_ENV=production, which silently skips prerendering
+  # and ships an empty SPA shell — so do NOT set NODE_ENV here, and ask for dev
+  # dependencies explicitly. react-scripts already builds in production mode.
+  NPM_FLAGS = "--include=dev"
 
 # Client-side routing fallback. Netlify serves an existing static file before it
 # applies this rule, so the prerendered /piano/index.html etc. still win — this
