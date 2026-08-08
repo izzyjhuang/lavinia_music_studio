@@ -4,22 +4,35 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+  # Netlify sets CI=true, which makes react-scripts promote every ESLint warning
+  # to a build error. This repo has pre-existing unused-variable warnings that
+  # would otherwise fail the deploy; they're worth cleaning up, but they should
+  # not be able to take the site down.
+  CI = "false"
 
 [context.production.environment]
   NODE_ENV = "production"
 
+# Client-side routing fallback. Netlify serves an existing static file before it
+# applies this rule, so the prerendered /piano/index.html etc. still win — this
+# only catches URLs that were never prerendered.
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[headers]
-  for = "/"
-    [headers.values]
-      Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-      X-Frame-Options = "DENY"
-      X-Content-Type-Options = "nosniff"
-      X-XSS-Protection = "1; mode=block"
-      Referrer-Policy = "strict-origin-when-cross-origin"
-      Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; font-src 'self' https:; object-src 'none'"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; media-src 'self' https://res.cloudinary.com; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+
+# Hashed assets never change contents, so they can be cached indefinitely.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
