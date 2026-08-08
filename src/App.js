@@ -12,6 +12,7 @@ import Location from './pages/Location';
 import { LOCATION_ROUTES } from './seo/locations';
 import LanguageWrapper from './components/LanguageWrapper';
 import Seo from './components/Seo';
+import Analytics from './components/Analytics';
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
       <LanguageWrapper>
         <>
           <Seo />
+          <Analytics />
           <Banner />
           <Navbar />
           <div className="app-container">

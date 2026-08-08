@@ -128,7 +128,10 @@ async function main() {
       const thirdPartyImage = type === 'image' && !url.includes(`localhost:${PORT}`);
       // Analytics must not record the build itself — every prerender pass would
       // otherwise register 18 phantom visits.
-      const analytics = url.includes('cloudflareinsights.com');
+      const analytics =
+        url.includes('cloudflareinsights.com') ||
+        url.includes('googletagmanager.com') ||
+        url.includes('google-analytics.com');
       if (heavy || thirdPartyImage || analytics) return req.abort();
       return req.continue();
     });
