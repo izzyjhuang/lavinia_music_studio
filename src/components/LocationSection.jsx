@@ -83,7 +83,7 @@ const LocationSection = () => {
         <h3 className="location-areas-label">{t.areasLabel}</h3>
         <ul className="location-areas-list">
           {serviceAreas.map((area) => (
-            <li key={area.name.en}>{area.name[langKey]}, IL</li>
+            <li key={area.name.en}>{`${area.name[langKey]}, IL`}</li>
           ))}
         </ul>
       </div>

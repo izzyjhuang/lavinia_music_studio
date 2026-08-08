@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 import FaqSchema from '../components/FaqSchema';
+import { serviceSchema, videoSchema } from '../seo/siteMeta';
 import '../images/playing-piano.jpeg';
 import './ViolinViola.css';
 import playingViolinImg from '../images/playing-violin.jpeg';
@@ -387,6 +388,16 @@ const ViolinViola = () => {
   return (
     <>
     <FaqSchema items={faqData} lang={langKey} />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Violin and Viola')) }}
+    />
+    {videoSchema(recitals[langKey] || []) && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema(recitals[langKey])) }}
+      />
+    )}
     <section className="violinviola-banner-bg">
     </section>
       <div className="violinviola-page">

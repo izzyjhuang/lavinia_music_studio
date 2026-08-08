@@ -134,11 +134,17 @@ async function main() {
       const url = `http://localhost:${PORT}${route}`;
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-      // Wait until React has mounted and <Seo /> has supplied a real title.
+      // Wait until React has mounted and <Seo /> has applied its head tags.
+      // Checking document.title alone would race the effect, because the
+      // fallback title from public/index.html is present from the first byte.
       await page.waitForFunction(
         () => {
           const root = document.getElementById('root');
-          return root && root.children.length > 0 && document.title.trim().length > 0;
+          return (
+            root &&
+            root.children.length > 0 &&
+            document.documentElement.dataset.seoReady === 'true'
+          );
         },
         { timeout: 30000 }
       );

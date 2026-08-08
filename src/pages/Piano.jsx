@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
 import FaqSchema from '../components/FaqSchema';
+import { serviceSchema, videoSchema } from '../seo/siteMeta';
 import playingPianoImg from '../images/playing-piano.jpeg';
 import './Piano.css';
 
@@ -279,6 +280,16 @@ const Piano = () => {
   return (
     <>
       <FaqSchema items={faqData} lang={langKey} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema('Piano')) }}
+      />
+      {videoSchema(recitals[langKey] || []) && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema(recitals[langKey])) }}
+        />
+      )}
       <div className="piano-banner-bg"></div>
       <div className="piano-page">
         {/* 1. Overview of Piano Program */}

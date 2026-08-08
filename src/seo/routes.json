@@ -1,6 +1,17 @@
 {
   "siteUrl": "https://lavinialeemusicstudio.com",
-  "canonical": ["/", "/about", "/piano", "/violin-viola", "/current-students", "/contact"],
+  "canonical": [
+    "/",
+    "/about",
+    "/piano",
+    "/violin-viola",
+    "/current-students",
+    "/contact",
+    "/music-lessons-glenview",
+    "/music-lessons-northbrook",
+    "/music-lessons-wilmette"
+  ],
   "languagePrefixes": { "en": "", "tw": "/tw" },
-  "noindex": ["/current-students"]
+  "noindex": ["/current-students"],
+  "_comment": "Location slugs must match LOCATIONS[*].slug in locations.js. This file exists separately because the build scripts are CommonJS and cannot import the ESM source."
 }

@@ -1,0 +1,117 @@
+.location-page {
+  max-width: 820px;
+  margin: 3rem auto 2.5rem auto;
+  padding: 3rem 2.4rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(60, 40, 120, 0.08);
+}
+
+.location-page h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 1.2rem 0;
+}
+
+.location-intro {
+  font-size: 1.14rem;
+  line-height: 1.85;
+  color: #4a3566;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 2.2rem 0;
+}
+
+.location-block {
+  border-top: 1px solid #ece7f6;
+  padding-top: 1.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.location-block h2 {
+  font-size: 1.35rem;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 0.8rem 0;
+}
+
+.location-block p {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: #444;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 1rem 0;
+}
+
+.location-inline-link {
+  font-size: 1rem;
+  color: #5b3fa8;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.location-inline-link:hover {
+  text-decoration: underline;
+}
+
+.location-nearby {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.location-nearby li {
+  background: #f7f4fa;
+  border: 1px solid #e0d7f3;
+  border-radius: 999px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.98rem;
+  color: #4a3566;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.location-cta {
+  border-top: 1px solid #ece7f6;
+  padding-top: 1.9rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.location-cta p {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: #4a3566;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 1.4rem 0;
+}
+
+.location-cta-button {
+  display: inline-block;
+  background: #3a2c5b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  transition: background 0.15s;
+}
+
+.location-cta-button:hover {
+  background: #4a3a72;
+}
+
+@media (max-width: 800px) {
+  .location-page {
+    padding: 1.8rem 1.2rem;
+    margin: 1.5rem 0.6rem;
+  }
+  .location-page h1 { font-size: 1.5rem; }
+  .location-block h2 { font-size: 1.18rem; }
+}

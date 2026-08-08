@@ -2,6 +2,7 @@
 // Consumed by <Seo /> at runtime and by scripts/generate-sitemap.js at build time.
 
 import routes from './routes.json';
+import { LOCATIONS } from './locations';
 
 export const SITE_URL = routes.siteUrl;
 export const SITE_NAME = 'Lavinia Lee Music Studio';
@@ -100,6 +101,15 @@ export const META = {
   },
 };
 
+// Per-suburb landing pages get their metadata from locations.js so the copy and
+// the <title>/description live in one place.
+Object.values(LOCATIONS).forEach((loc) => {
+  META[`/${loc.slug}`] = {
+    en: { title: loc.title.en, description: loc.description.en },
+    tw: { title: loc.title.tw, description: loc.description.tw },
+  };
+});
+
 // Strips the /tw prefix and normalises to a key in META.
 export function canonicalPath(pathname) {
   const stripped = pathname.replace(/^\/tw(?=\/|$)/, '') || '/';
@@ -122,12 +132,66 @@ export function metaFor(pathname) {
 }
 
 // Absolute URLs for a canonical key in each language.
+//
+// Trailing slashes are deliberate: the host serves /piano/ and 301s /piano to
+// it, so a canonical without the slash points at a URL that redirects.
 export function urlsFor(key) {
-  const suffix = key === '/' ? '' : key;
+  const path = key === '/' ? '/' : `${key}/`;
   return {
-    en: `${SITE_URL}${key === '/' ? '/' : key}`,
-    tw: `${SITE_URL}/tw${suffix}${key === '/' ? '/' : ''}`,
+    en: `${SITE_URL}${path}`,
+    tw: `${SITE_URL}/tw${path}`,
   };
+}
+
+// BreadcrumbList tells Google the site hierarchy and lets it render a path
+// instead of a bare URL under the result title.
+export function breadcrumbSchema(key, lang, title) {
+  const urls = urlsFor(key);
+  const home = lang === 'tw' ? `${SITE_URL}/tw/` : `${SITE_URL}/`;
+  const items = [{ '@type': 'ListItem', position: 1, name: SITE_NAME, item: home }];
+  if (key !== '/') {
+    items.push({ '@type': 'ListItem', position: 2, name: title, item: urls[lang] });
+  }
+  return { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items };
+}
+
+// One Service entry per instrument, scoped to the towns actually served.
+export function serviceSchema(instrument) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: `Private ${instrument} Lessons`,
+    provider: { '@id': `${SITE_URL}/#studio` },
+    areaServed: SERVICE_AREAS.map((a) => ({ '@type': 'City', name: a.name })),
+    audience: { '@type': 'Audience', audienceType: 'Students of all ages and levels' },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: BOOKING_URL,
+      name: 'Book a free trial lesson',
+    },
+  };
+}
+
+// Student performance videos are real content Google can surface as video
+// results. Parsed out of the recital lists the instrument pages already render.
+export function videoSchema(items) {
+  const entries = items
+    .map((item) => {
+      const text = String(item.label || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (!text || !item.video) return null;
+      return {
+        '@type': 'VideoObject',
+        name: `${text} — ${SITE_NAME}`,
+        description: `Student performance: ${text}, taught at ${SITE_NAME} on Chicago's North Shore.`,
+        thumbnailUrl: OG_IMAGE,
+        contentUrl: item.video,
+        uploadDate: '2025-08-01',
+      };
+    })
+    .filter(Boolean);
+  return entries.length
+    ? { '@context': 'https://schema.org', '@graph': entries }
+    : null;
 }
 
 // LocalBusiness structured data. Rendered once, on the home page.

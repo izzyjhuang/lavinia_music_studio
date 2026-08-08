@@ -6,59 +6,108 @@ import {
   metaFor,
   urlsFor,
   localBusinessSchema,
+  breadcrumbSchema,
 } from '../seo/siteMeta';
 
-// React 19 hoists <title>, <meta> and <link> rendered anywhere in the tree
-// into <head>, so this needs no helmet dependency. The prerenderer captures
-// the resulting DOM, which is what search engines and social scrapers read.
+// Head tags are applied imperatively rather than rendered as JSX.
+//
+// React 19 can hoist <title>/<meta>/<link> from anywhere in the tree, but when
+// it hydrates a prerendered page it APPENDS them instead of matching the ones
+// already in <head> — leaving two titles, two canonicals and six hreflang links,
+// plus a hydration mismatch on every route. Mutating the existing tags in an
+// effect sidesteps both: effects don't participate in hydration, and upserting
+// by selector updates the prerendered tag in place.
+function upsert(selector, tagName, attrs) {
+  let el = document.head.querySelector(selector);
+  if (!el) {
+    el = document.createElement(tagName);
+    document.head.appendChild(el);
+  }
+  // The fallback tags in public/index.html carry data-default, and the
+  // prerenderer deletes anything still marked that way. Once this component has
+  // written real values into a tag, drop the marker so it survives the capture.
+  el.removeAttribute('data-default');
+  Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+  return el;
+}
+
+function removeIfPresent(selector) {
+  const el = document.head.querySelector(selector);
+  if (el) el.remove();
+}
+
 const Seo = () => {
   const { pathname } = useLocation();
   const { title, description, key, lang, noindex } = metaFor(pathname);
   const urls = urlsFor(key);
-  const schema = key === '/'; // studio-level structured data belongs on one page only
   const canonical = urls[lang];
   const htmlLang = lang === 'tw' ? 'zh-Hant' : 'en';
+  const isHome = key === '/';
 
-  // <html lang> is not hoistable, so set it directly.
   React.useEffect(() => {
     document.documentElement.lang = htmlLang;
-  }, [htmlLang]);
+    document.title = title;
+    // Same reason as upsert(): the fallback <title> must lose its marker.
+    const titleEl = document.head.querySelector('title');
+    if (titleEl) titleEl.removeAttribute('data-default');
 
-  return (
-    <>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {noindex && <meta name="robots" content="noindex, follow" />}
-      <link rel="canonical" href={canonical} />
+    upsert('meta[name="description"]', 'meta', { name: 'description', content: description });
+    upsert('link[rel="canonical"]', 'link', { rel: 'canonical', href: canonical });
 
-      {/* Tells Google the two language versions are the same page. */}
-      <link rel="alternate" hrefLang="en" href={urls.en} />
-      <link rel="alternate" hrefLang="zh-Hant" href={urls.tw} />
-      <link rel="alternate" hrefLang="x-default" href={urls.en} />
+    upsert('link[rel="alternate"][hreflang="en"]', 'link', { rel: 'alternate', hreflang: 'en', href: urls.en });
+    upsert('link[rel="alternate"][hreflang="zh-Hant"]', 'link', { rel: 'alternate', hreflang: 'zh-Hant', href: urls.tw });
+    upsert('link[rel="alternate"][hreflang="x-default"]', 'link', { rel: 'alternate', hreflang: 'x-default', href: urls.en });
 
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={OG_IMAGE} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:locale" content={lang === 'tw' ? 'zh_TW' : 'en_US'} />
+    const og = {
+      'og:type': 'website',
+      'og:site_name': SITE_NAME,
+      'og:title': title,
+      'og:description': description,
+      'og:url': canonical,
+      'og:image': OG_IMAGE,
+      'og:image:width': '1200',
+      'og:image:height': '630',
+      'og:locale': lang === 'tw' ? 'zh_TW' : 'en_US',
+    };
+    Object.entries(og).forEach(([property, content]) =>
+      upsert(`meta[property="${property}"]`, 'meta', { property, content })
+    );
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={OG_IMAGE} />
+    const tw = {
+      'twitter:card': 'summary_large_image',
+      'twitter:title': title,
+      'twitter:description': description,
+      'twitter:image': OG_IMAGE,
+    };
+    Object.entries(tw).forEach(([name, content]) =>
+      upsert(`meta[name="${name}"]`, 'meta', { name, content })
+    );
 
-      {schema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
-        />
-      )}
-    </>
-  );
+    if (noindex) {
+      upsert('meta[name="robots"]', 'meta', { name: 'robots', content: 'noindex, follow' });
+    } else {
+      removeIfPresent('meta[name="robots"]');
+    }
+
+    // Structured data, keyed by data-schema so each block is replaced rather
+    // than accumulating on client-side navigation.
+    const schemas = { breadcrumb: breadcrumbSchema(key, lang, title) };
+    if (isHome) schemas.studio = localBusinessSchema();
+
+    ['studio', 'breadcrumb'].forEach((name) => {
+      const selector = `script[data-schema="${name}"]`;
+      if (!schemas[name]) return removeIfPresent(selector);
+      const el = upsert(selector, 'script', { type: 'application/ld+json', 'data-schema': name });
+      el.textContent = JSON.stringify(schemas[name]);
+      return el;
+    });
+
+    // Signals the prerenderer that metadata has been applied — without it the
+    // capture can race the effect and save the fallback <title>.
+    document.documentElement.dataset.seoReady = 'true';
+  }, [title, description, canonical, htmlLang, lang, key, noindex, isHome, urls.en, urls.tw]);
+
+  return null;
 };
 
 export default Seo;

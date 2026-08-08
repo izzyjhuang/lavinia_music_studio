@@ -19,12 +19,21 @@ const noindex = routes.noindex || [];
 const canonical = routes.canonical.filter((r) => !noindex.includes(r));
 
 // Home first, then the pages a parent is most likely to search for.
-const PRIORITY = { '/': '1.0', '/piano': '0.9', '/violin-viola': '0.9', '/about': '0.7', '/contact': '0.7', '/current-students': '0.4' };
-
-const urlFor = (prefix, route) => {
-  if (route === '/') return `${siteUrl}${prefix}/`;
-  return `${siteUrl}${prefix}${route}`;
+const PRIORITY = {
+  '/': '1.0',
+  '/piano': '0.9',
+  '/violin-viola': '0.9',
+  '/music-lessons-glenview': '0.8',
+  '/music-lessons-northbrook': '0.8',
+  '/music-lessons-wilmette': '0.8',
+  '/about': '0.7',
+  '/contact': '0.7',
 };
+
+// Trailing slashes match what the host actually serves — /piano 301s to /piano/,
+// and listing the redirecting form would waste crawl budget on every URL.
+const urlFor = (prefix, route) =>
+  `${siteUrl}${prefix}${route === '/' ? '/' : `${route}/`}`;
 
 function buildSitemap() {
   const today = new Date().toISOString().split('T')[0];
