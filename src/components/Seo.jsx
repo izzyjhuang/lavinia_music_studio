@@ -13,7 +13,7 @@ import {
 // the resulting DOM, which is what search engines and social scrapers read.
 const Seo = () => {
   const { pathname } = useLocation();
-  const { title, description, key, lang } = metaFor(pathname);
+  const { title, description, key, lang, noindex } = metaFor(pathname);
   const urls = urlsFor(key);
   const schema = key === '/'; // studio-level structured data belongs on one page only
   const canonical = urls[lang];
@@ -28,6 +28,7 @@ const Seo = () => {
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
       <link rel="canonical" href={canonical} />
 
       {/* Tells Google the two language versions are the same page. */}

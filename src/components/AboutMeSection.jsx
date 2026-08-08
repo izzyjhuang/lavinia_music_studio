@@ -5,9 +5,13 @@ import { useLanguage } from './LanguageWrapper';
 
 const aboutText = {
   en: {
+    h1: 'About Lavinia Lee — Piano, Violin & Viola Teacher',
+    alt: 'Lavinia Lee, private music teacher serving Chicago\'s North Shore',
     bio: `I'm Lavinia Lee, a passionate violin, viola, and piano teacher with Masters degrees from Yale and Northwestern, and over 20 years of teaching and performing experience. My approach blends Suzuki method, music theory, and orchestral training to help students thrive musically and personally. Whether your child is just starting or preparing for auditions, I'm committed to nurturing their growth with warmth, structure, and expert guidance.`
   },
   tw: {
+    h1: '關於 Lavinia Lee 老師 — 鋼琴、小提琴與中提琴教學',
+    alt: 'Lavinia Lee 老師，服務芝加哥北岸的私人音樂教師',
     bio: `我是李老師（Lavinia Lee），主授小提琴、中提琴與鋼琴，畢業於耶魯大學碩士與西北大學，擁有超過二十年教學與演奏經驗。我的教學融合鈴木教學法、樂理與管弦樂訓練，幫助學生在音樂與個人成長上都能茁壯。不論您的孩子是初學還是備考，我都以溫暖、結構化與專業的指導，陪伴他們成長。`
   }
 };
@@ -20,7 +24,7 @@ const AboutMeSection = () => {
   return (
     <section className="aboutme-section">
       <div className="aboutme-pic">
-        <img src={teacherPic} alt="Teacher" className="aboutme-img" />
+        <img src={teacherPic} alt={t.alt} className="aboutme-img" />
       </div>
       <div className="aboutme-bio" style={{
         background: 'linear-gradient(120deg, #f7f4fa 80%, #e9e3f7 100%)',
@@ -36,6 +40,7 @@ const AboutMeSection = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
+        <h1 className="aboutme-h1">{t.h1}</h1>
         <p style={{ fontSize: '1.18rem', lineHeight: 1.9, color: '#4a3566', background: 'none', borderRadius: '0', padding: 0, boxShadow: 'none', fontWeight: 500, margin: 0 }}>{t.bio}</p>
       </div>
     </section>

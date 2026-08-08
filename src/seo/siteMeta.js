@@ -111,10 +111,14 @@ export function langFromPath(pathname) {
   return /^\/tw(\/|$)/.test(pathname) ? 'tw' : 'en';
 }
 
+// Pages with nothing useful for a search engine — currently the password-gated
+// student area, whose prerendered form is all a crawler would ever see.
+export const NOINDEX = routes.noindex || [];
+
 export function metaFor(pathname) {
   const key = canonicalPath(pathname);
   const lang = langFromPath(pathname);
-  return { ...META[key][lang], key, lang };
+  return { ...META[key][lang], key, lang, noindex: NOINDEX.includes(key) };
 }
 
 // Absolute URLs for a canonical key in each language.
@@ -157,7 +161,18 @@ export function localBusinessSchema() {
       },
     })),
     knowsLanguage: ['en', 'zh-Hant'],
-    founder: { '@type': 'Person', name: 'Lavinia Lee', jobTitle: 'Music Instructor' },
+    founder: {
+      '@type': 'Person',
+      name: 'Lavinia Lee',
+      jobTitle: 'Music Instructor',
+      description:
+        'Violin, viola, and piano teacher with over 20 years of teaching and performing experience, blending Suzuki method, music theory, and orchestral training.',
+      alumniOf: [
+        { '@type': 'CollegeOrUniversity', name: 'Yale University' },
+        { '@type': 'CollegeOrUniversity', name: 'Northwestern University' },
+      ],
+      knowsAbout: ['Piano', 'Violin', 'Viola', 'Suzuki method', 'Music theory', 'Competition preparation'],
+    },
     potentialAction: {
       '@type': 'ReserveAction',
       name: 'Book a Free Trial Lesson',

@@ -16,7 +16,7 @@ const Banner = () => {
   return (
     <Link to="/" className="banner-link">
       <div className="banner">
-        <img src={owlLogo} alt="Owl Logo" className="banner-logo" />
+        <img src={owlLogo} alt="Lavinia Lee Music Studio logo" className="banner-logo" />
         <span className="banner-title">{bannerTitle[language]}</span>
       </div>
     </Link>

@@ -1,5 +1,6 @@
 {
   "siteUrl": "https://lavinialeemusicstudio.com",
   "canonical": ["/", "/about", "/piano", "/violin-viola", "/current-students", "/contact"],
-  "languagePrefixes": { "en": "", "tw": "/tw" }
+  "languagePrefixes": { "en": "", "tw": "/tw" },
+  "noindex": ["/current-students"]
 }

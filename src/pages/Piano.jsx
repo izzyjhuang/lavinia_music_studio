@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
+import FaqSchema from '../components/FaqSchema';
 import playingPianoImg from '../images/playing-piano.jpeg';
 import './Piano.css';
 
@@ -277,6 +278,7 @@ const Piano = () => {
   const t = whyLearnPianoPoints[langKey];
   return (
     <>
+      <FaqSchema items={faqData} lang={langKey} />
       <div className="piano-banner-bg"></div>
       <div className="piano-page">
         {/* 1. Overview of Piano Program */}

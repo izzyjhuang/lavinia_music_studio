@@ -14,6 +14,13 @@ const missionText = {
 
 const instrumentText = {
   en: {
+    // The home page had no <h1> at all. It carries the primary keyword set.
+    h1: "Piano, Violin & Viola Lessons on Chicago's North Shore",
+    alt: {
+      teacher: 'Lavinia Lee, private piano and violin teacher in Northbrook, Illinois',
+      piano: 'Student playing piano during a private lesson',
+      violin: 'Student playing violin during a private lesson',
+    },
     piano: {
       title: 'Piano Lessons',
       desc: 'Learn to play the piano with personalized lessons tailored to your goals and learning style.'
@@ -28,6 +35,12 @@ const instrumentText = {
     }
   },
   tw: {
+    h1: '芝加哥北岸鋼琴、小提琴與中提琴課程',
+    alt: {
+      teacher: 'Lavinia Lee 老師，Northbrook 鋼琴與小提琴私人教學',
+      piano: '學生於一對一課程中彈奏鋼琴',
+      violin: '學生於一對一課程中演奏小提琴',
+    },
     piano: {
       title: '鋼琴課程',
       desc: '根據您的目標和學習風格，提供量身打造的鋼琴課程。'
@@ -62,9 +75,10 @@ const Home = () => {
       </section>
       <section className="home-mission-section">
         <div className="home-mission-pic">
-          <img src={teacherPic} alt="Teacher" className="home-mission-img" />
+          <img src={teacherPic} alt={instrumentText[langKey].alt.teacher} className="home-mission-img" />
         </div>
         <div className="home-mission-bio">
+          <h1 className="home-h1">{instrumentText[langKey].h1}</h1>
           <p>{missionText[langKey]}</p>
         </div>
       </section>
@@ -72,7 +86,7 @@ const Home = () => {
         <div className="home-instrument-card">
           <Link to="/piano" className="home-instrument-link">
             <div className="home-instrument-content">
-              <img src={pianoImg} alt="Piano" className="home-instrument-img" />
+              <img src={pianoImg} alt={instrumentText[langKey].alt.piano} className="home-instrument-img" />
               <h3>{instrumentText[langKey].piano.title}</h3>
               <p>{instrumentText[langKey].piano.desc}</p>
             </div>
@@ -81,7 +95,7 @@ const Home = () => {
         <div className="home-instrument-card">
           <Link to="/violin-viola" className="home-instrument-link">
             <div className="home-instrument-content">
-              <img src={violinImg} alt="Violin" className="home-instrument-img" />
+              <img src={violinImg} alt={instrumentText[langKey].alt.violin} className="home-instrument-img" />
               <h3>{instrumentText[langKey].violin.title}</h3>
               <p>{instrumentText[langKey].violin.desc}</p>
             </div>

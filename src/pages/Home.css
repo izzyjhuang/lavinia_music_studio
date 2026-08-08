@@ -476,3 +476,16 @@
     text-align: center;
   }
 } 
+/* Primary keyword heading. The home page previously had no <h1> at all.
+   Sized to lead into the bio rather than compete with the banner title. */
+.home-h1 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  color: #3a2c5b;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  margin: 0 0 0.9rem 0;
+}
+
+@media (max-width: 800px) {
+  .home-h1 { font-size: 1.28rem; }
+}

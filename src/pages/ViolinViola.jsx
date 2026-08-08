@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageWrapper';
+import FaqSchema from '../components/FaqSchema';
 import '../images/playing-piano.jpeg';
 import './ViolinViola.css';
 import playingViolinImg from '../images/playing-violin.jpeg';
@@ -385,6 +386,7 @@ const ViolinViola = () => {
   const h = headings[langKey];
   return (
     <>
+    <FaqSchema items={faqData} lang={langKey} />
     <section className="violinviola-banner-bg">
     </section>
       <div className="violinviola-page">

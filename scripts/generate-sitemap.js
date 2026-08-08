@@ -11,7 +11,12 @@ const path = require('path');
 const routes = require('../src/seo/routes.json');
 
 const BUILD_DIR = path.join(__dirname, '..', 'build');
-const { siteUrl, canonical, languagePrefixes } = routes;
+const { siteUrl, languagePrefixes } = routes;
+
+// Keep noindex pages out of the sitemap — submitting a URL you also tell Google
+// not to index is a contradictory signal.
+const noindex = routes.noindex || [];
+const canonical = routes.canonical.filter((r) => !noindex.includes(r));
 
 // Home first, then the pages a parent is most likely to search for.
 const PRIORITY = { '/': '1.0', '/piano': '0.9', '/violin-viola': '0.9', '/about': '0.7', '/contact': '0.7', '/current-students': '0.4' };
