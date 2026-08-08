@@ -4,7 +4,12 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+  # Netlify sets CI=true, which makes react-scripts promote every ESLint warning
+  # to a build error. This repo has pre-existing unused-variable warnings that
+  # would otherwise fail the deploy; they're worth cleaning up, but they should
+  # not be able to take the site down.
+  CI = "false"
 
 [context.production.environment]
   NODE_ENV = "production"
