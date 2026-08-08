@@ -1,5 +1,5 @@
 {
-  "homepage": ".",
+  "homepage": "/",
   "name": "lavinia-lee-music-studio",
   "version": "0.1.0",
   "private": true,
@@ -14,10 +14,16 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^5.0.3"
   },
+  "devDependencies": {
+    "puppeteer": "^24.10.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "cp build/index.html build/404.html",
+    "postbuild": "node scripts/generate-sitemap.js && node scripts/prerender.js && cp build/index.html build/404.html",
+    "prerender": "node scripts/prerender.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "preview": "node scripts/preview.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

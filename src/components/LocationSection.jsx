@@ -17,11 +17,13 @@ const serviceAreas = [
 const locationText = {
   en: {
     heading: 'Serving the Chicago North Shore Community',
-    caption: 'Providing in-person lessons across the Chicago North Shore suburbs and virtual lessons throughout the greater Chicagoland area.'
+    caption: 'Providing in-person lessons across the Chicago North Shore suburbs and virtual lessons throughout the greater Chicagoland area.',
+    areasLabel: 'In-person lesson areas'
   },
   tw: {
     heading: '服務芝加哥北郊社區',
-    caption: '提供芝加哥北郊地區面授課程，並於大芝加哥地區提供線上課程。'
+    caption: '提供芝加哥北郊地區面授課程，並於大芝加哥地區提供線上課程。',
+    areasLabel: '面授課程服務地區'
   }
 };
 
@@ -40,26 +42,50 @@ const LocationSection = () => {
   // Map zh to tw since we're using /tw in the URL
   const langKey = language === 'zh' ? 'tw' : language;
   const t = locationText[langKey];
+
+  // Leaflet builds its panes imperatively, so any markup it creates during a
+  // prerender won't match what React expects on hydration. The prerenderer sets
+  // __PRERENDER__ so the map is left out of the static HTML entirely; in a real
+  // browser it mounts after hydration, which also keeps OSM tiles off the
+  // critical path.
+  const [showMap, setShowMap] = React.useState(false);
+  React.useEffect(() => {
+    if (window.__PRERENDER__) return;
+    setShowMap(true);
+  }, []);
+
   return (
     <section className="location-section">
       <h2>{t.heading}</h2>
       <div className="location-map-container">
-        <MapContainer
-          center={[42.13, -87.8]}
-          zoom={11}
-          scrollWheelZoom={false}
-          style={{ width: '100%', height: 320, borderRadius: 14 }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {serviceAreas.map((area, idx) => (
-            <Marker key={area.name.en} position={area.coords} icon={markerIcon}>
-              <Popup>{area.name[language]}</Popup>
-            </Marker>
+        {showMap && (
+          <MapContainer
+            center={[42.13, -87.8]}
+            zoom={11}
+            scrollWheelZoom={false}
+            style={{ width: '100%', height: 320, borderRadius: 14 }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {serviceAreas.map((area, idx) => (
+              <Marker key={area.name.en} position={area.coords} icon={markerIcon}>
+                <Popup>{area.name[language]}</Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+        )}
+      </div>
+      {/* The suburb names live in real text as well as on the map, so search
+          engines can actually read where lessons are offered. */}
+      <div className="location-areas">
+        <h3 className="location-areas-label">{t.areasLabel}</h3>
+        <ul className="location-areas-list">
+          {serviceAreas.map((area) => (
+            <li key={area.name.en}>{area.name[langKey]}, IL</li>
           ))}
-        </MapContainer>
+        </ul>
       </div>
       <div className="location-caption">
         {t.caption}

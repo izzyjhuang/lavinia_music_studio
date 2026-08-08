@@ -19,10 +19,48 @@
 .location-map-container {
   width: 100%;
   max-width: 600px;
+  /* Reserved before the map mounts so the section doesn't jump on hydration. */
+  min-height: 320px;
   margin: 0 auto 1.7rem auto;
   border-radius: 16px;
   overflow: hidden;
+  background: #f2eefa;
   box-shadow: 0 4px 18px rgba(60,40,120,0.10);
+}
+
+.location-areas {
+  margin: 0 auto 0.4rem auto;
+  max-width: 620px;
+}
+
+.location-areas-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #6b5a91;
+  margin: 0 0 0.9rem 0;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.location-areas-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.location-areas-list li {
+  background: #f7f4fa;
+  border: 1px solid #e0d7f3;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  color: #4a3566;
+  font-family: 'Nunito', 'Segoe UI', 'Arial', sans-serif;
 }
 
 .location-list {
@@ -60,4 +98,8 @@
     font-size: 1.03rem;
     max-width: 98vw;
   }
-} 
+  .location-areas-list li {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.85rem;
+  }
+}

@@ -9,6 +9,7 @@ import ViolinViola from './pages/ViolinViola';
 import CurrentStudents from './pages/CurrentStudents';
 import Contact from './pages/Contact';
 import LanguageWrapper from './components/LanguageWrapper';
+import Seo from './components/Seo';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <LanguageWrapper>
         <>
+          <Seo />
           <Banner />
           <Navbar />
           <div className="app-container">

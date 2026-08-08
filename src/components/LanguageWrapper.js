@@ -1,36 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const LanguageContext = React.createContext();
 
+const langFromPath = (pathname) => (/^\/tw(\/|$)/.test(pathname) ? 'tw' : 'en');
+
 const LanguageWrapper = ({ children }) => {
   const navigate = useNavigate();
-  const [language, setLanguage] = useState(() => {
-    // Check URL first, then localStorage, then default to 'en'
-    const urlLang = window.location.pathname.split('/')[1];
-    if (urlLang === 'tw') return 'tw';
-    return localStorage.getItem('language') || 'en';
-  });
+  const { pathname } = useLocation();
+
+  // Derived from the URL only. Reading localStorage here would make the first
+  // client render disagree with the prerendered HTML and break hydration.
+  const [language, setLanguage] = useState(() => langFromPath(pathname));
 
   const toggleLanguage = (lang) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
-    // Update URL
-    const currentPath = window.location.pathname;
-    const newPath = lang === 'tw' ? '/tw' + (currentPath === '/' ? '' : currentPath) : currentPath.replace(/^\/tw/, '');
+    const newPath =
+      lang === 'tw'
+        ? '/tw' + (pathname === '/' ? '' : pathname)
+        : pathname.replace(/^\/tw/, '') || '/';
     navigate(newPath, { replace: true });
   };
 
+  // Apply a saved preference only on a bare landing at the root. Deep links keep
+  // whatever language their URL says, so an English search result never bounces
+  // a visitor into the Chinese version.
   useEffect(() => {
-    // Update URL when language changes
-    if (language === 'tw' && !window.location.pathname.startsWith('/tw')) {
-      const newPath = '/tw' + (window.location.pathname === '/' ? '' : window.location.pathname);
-      navigate(newPath, { replace: true });
-    } else if (language === 'en' && window.location.pathname.startsWith('/tw')) {
-      const newPath = window.location.pathname.replace(/^\/tw/, '');
-      navigate(newPath, { replace: true });
+    if (pathname !== '/') return;
+    const stored = localStorage.getItem('language');
+    if (stored === 'tw') {
+      setLanguage('tw');
+      navigate('/tw', { replace: true });
     }
-  }, [language, navigate]);
+  }, [pathname, navigate]);
+
+  // Keep state in sync when the URL changes by any other means (back button, links).
+  useEffect(() => {
+    const fromPath = langFromPath(pathname);
+    setLanguage((current) => (current === fromPath ? current : fromPath));
+  }, [pathname]);
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage }}>
