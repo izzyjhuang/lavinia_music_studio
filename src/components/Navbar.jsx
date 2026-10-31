@@ -9,6 +9,7 @@ const navText = {
     piano: 'Piano',
     violin: 'Violin/Viola',
     students: 'Student Resources',
+    events: 'Upcoming Events',
     contact: 'Contact',
   },
   tw: {
@@ -16,6 +17,7 @@ const navText = {
     piano: '鋼琴',
     violin: '小提琴/中提琴',
     students: '學生資源',
+    events: '近期活動',
     contact: '聯絡',
   }
 };
@@ -32,6 +34,7 @@ const Navbar = () => {
       <Link to="/piano" className={location.pathname === '/piano' ? 'active' : ''}>{t.piano}</Link>
       <Link to="/violin-viola" className={location.pathname === '/violin-viola' ? 'active' : ''}>{t.violin}</Link>
       <Link to="/current-students" className={location.pathname === '/current-students' ? 'active' : ''}>{t.students}</Link>
+      <Link to="/upcoming-events" className={location.pathname === '/upcoming-events' ? 'active' : ''}>{t.events}</Link>
       <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>{t.contact}</Link>
       <LanguageSelector />
     </nav>

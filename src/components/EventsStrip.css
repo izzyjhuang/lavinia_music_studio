@@ -1,0 +1,79 @@
+.events-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  /* Slowly moving gradient so the strip stands out from the page */
+  background: linear-gradient(90deg, #3a2c5b, #7c5e99, #c0577a, #7c5e99, #3a2c5b);
+  background-size: 300% 100%;
+  animation: events-strip-shift 8s ease-in-out infinite;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(58,44,91,0.25);
+}
+
+.events-strip-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: events-strip-fade 0.6s ease-out;
+}
+
+.events-strip-emoji {
+  display: inline-block;
+  font-size: 1.4em;
+  animation: events-strip-bounce 1.6s ease-in-out infinite;
+}
+
+.events-strip-button {
+  display: inline-block;
+  background: #f5b82e;
+  color: #3a2c5b;
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  animation: events-strip-pulse 2s ease-in-out infinite;
+}
+.events-strip:hover .events-strip-button {
+  background: #ffd25e;
+}
+
+@keyframes events-strip-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes events-strip-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes events-strip-bounce {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-4px) rotate(-10deg); }
+}
+@keyframes events-strip-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,184,46,0.7); }
+  50% { transform: scale(1.06); box-shadow: 0 0 0 8px rgba(245,184,46,0); }
+}
+
+/* Visitors who ask the OS for less motion get the static version */
+@media (prefers-reduced-motion: reduce) {
+  .events-strip,
+  .events-strip-message,
+  .events-strip-emoji,
+  .events-strip-button {
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .events-strip {
+    font-size: 14px;
+    padding: 10px 10px;
+  }
+}

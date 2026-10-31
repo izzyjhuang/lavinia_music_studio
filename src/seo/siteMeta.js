@@ -87,6 +87,18 @@ export const META = {
         'Lavinia Lee 音樂教室在學學生專區：練習指南、教室規定、成果發表會資訊與課程相關資源。',
     },
   },
+  '/upcoming-events': {
+    en: {
+      title: 'Fall 2026 Piano & Violin Recitals — Northfield, IL',
+      description:
+        'Upcoming events at Lavinia Lee Music Studio: the Fall 2026 Piano Recital on November 7 and Violin Recital on November 8, 1:30 PM, at 550 Sunset Ridge Rd, Northfield. Free admission.',
+    },
+    tw: {
+      title: '2026 秋季鋼琴與小提琴發表會 | Lavinia Lee 音樂教室',
+      description:
+        'Lavinia Lee 音樂教室近期活動：2026 秋季鋼琴發表會（11 月 7 日）與小提琴發表會（11 月 8 日），下午 1:30，地點 550 Sunset Ridge Rd, Northfield，免費入場。',
+    },
+  },
   '/contact': {
     en: {
       title: 'Free Trial Lesson — Piano & Violin, Northbrook IL',

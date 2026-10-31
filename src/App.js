@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Banner from './components/Banner';
+import EventsStrip from './components/EventsStrip';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
@@ -8,6 +9,7 @@ import Piano from './pages/Piano';
 import ViolinViola from './pages/ViolinViola';
 import CurrentStudents from './pages/CurrentStudents';
 import Contact from './pages/Contact';
+import UpcomingEvents from './pages/UpcomingEvents';
 import Location from './pages/Location';
 import { LOCATION_ROUTES } from './seo/locations';
 import LanguageWrapper from './components/LanguageWrapper';
@@ -23,6 +25,7 @@ function App() {
         <>
           <Seo />
           <Analytics />
+          <EventsStrip />
           <Banner />
           <Navbar />
           <div className="app-container">
@@ -33,6 +36,7 @@ function App() {
               <Route path="/piano" element={<Piano />} />
               <Route path="/violin-viola" element={<ViolinViola />} />
               <Route path="/current-students" element={<CurrentStudents />} />
+              <Route path="/upcoming-events" element={<UpcomingEvents />} />
               <Route path="/contact" element={<Contact />} />
 
               {/* Per-suburb landing pages, e.g. /music-lessons-glenview */}
@@ -46,6 +50,7 @@ function App() {
               <Route path="/tw/piano" element={<Piano />} />
               <Route path="/tw/violin-viola" element={<ViolinViola />} />
               <Route path="/tw/current-students" element={<CurrentStudents />} />
+              <Route path="/tw/upcoming-events" element={<UpcomingEvents />} />
               <Route path="/tw/contact" element={<Contact />} />
               {LOCATION_ROUTES.map((route) => (
                 <Route key={`tw${route}`} path={`/tw${route}`} element={<Location />} />
