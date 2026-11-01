@@ -1,5 +1,6 @@
 import Footer from '../components/Footer';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import './UpcomingEvents.css';
 import pianoRecitalPoster from '../images/recital-2026-fall-piano.jpg';
 import violinRecitalPoster from '../images/recital-2026-fall-violin.jpg';
@@ -39,9 +40,21 @@ const UpcomingEvents = () => {
   // Map zh to tw since we're using /tw in the URL
   const langKey = language === 'zh' ? 'tw' : language;
   const t = text[langKey];
+  const location = useLocation();
+  const headingRef = useRef(null);
+
+  // On phones the strip, banner, and stacked nav fill the whole screen, so
+  // scroll past them to the posters. location.key changes on every visit,
+  // including a repeat click on the strip while already on this page.
+  useEffect(() => {
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.key]);
+
   return (
     <div className="events-page">
-      <h1>{t.h1}</h1>
+      <h1 ref={headingRef}>{t.h1}</h1>
       <section className="events-section">
         <h2>{t.heading}</h2>
         <p>{t.desc}</p>

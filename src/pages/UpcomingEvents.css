@@ -1,5 +1,6 @@
 .events-page h1 {
   text-align: center;
+  scroll-margin-top: 12px;
   color: #3a2c5b;
   font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
 }

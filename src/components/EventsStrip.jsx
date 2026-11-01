@@ -11,14 +11,14 @@ const stripText = {
       { emoji: '🎹', text: 'Upcoming Piano Recital — Sat, Nov 7 · 1:30 PM · 📍 550 Sunset Ridge Rd, Northfield' },
       { emoji: '🎻', text: 'Upcoming Violin Recital — Sun, Nov 8 · 1:30 PM · 📍 550 Sunset Ridge Rd, Northfield' },
     ],
-    link: 'See the posters →',
+    link: 'More details →',
   },
   tw: {
     messages: [
       { emoji: '🎹', text: '即將舉行：鋼琴發表會 — 11/7（六）下午 1:30 · 📍 550 Sunset Ridge Rd, Northfield' },
       { emoji: '🎻', text: '即將舉行：小提琴發表會 — 11/8（日）下午 1:30 · 📍 550 Sunset Ridge Rd, Northfield' },
     ],
-    link: '查看海報 →',
+    link: '更多資訊 →',
   },
 };
 
