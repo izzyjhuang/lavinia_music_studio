@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "puppeteer browsers install chrome || echo \"[prebuild] Chrome install failed; prerender will be skipped\"",
     "build": "react-scripts build",
     "postbuild": "node scripts/generate-sitemap.js && node scripts/prerender.js && cp build/index.html build/404.html",
     "prerender": "node scripts/prerender.js",

@@ -192,4 +192,8 @@ main().catch((err) => {
   console.error(`  * ${err.message.slice(0, 60).padEnd(60)} *`);
   console.error('  ****************************************************************');
   console.error('');
+  // The static server may still be listening (e.g. Chrome failed to launch), and
+  // an open handle keeps node alive until Netlify kills the build at its time
+  // limit. Exit explicitly so the deploy still ships.
+  process.exit(0);
 });

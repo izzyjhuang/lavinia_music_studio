@@ -318,3 +318,6 @@ yarn-error.log*
 # Next.js
 .next/
 out/
+
+# Local Netlify folder
+.netlify
